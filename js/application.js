@@ -16,8 +16,12 @@ var t;
         };
         mapForm.prototype.load = function () {
             var _this = this;
-            $.getJSON('./data/dresden_hbf.geojson', function (geojson) {
-                console.log(geojson);
+            $.getJSON('./data/dresden_hbf.json', function (json) {
+                console.log("-", json);
+                var geojson = osmtogeojson(json, {
+                    flatProperties: true,
+                    polygonFeatures: function () { return true; }
+                });
                 L.geoJson(geojson, {
                     filter: function (feature) { return _this._layerFilter(feature); },
                     style: function (feature) { return _this._styleGeoJson(feature); }

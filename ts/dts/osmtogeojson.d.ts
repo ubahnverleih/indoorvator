@@ -3,9 +3,9 @@
 // Version 2.2.5
 
 declare interface IosmtogeojsonOptions {
-	flatProperties: any,
-	uninterestingTags: any,
-	polygonFeatures: any 
+	flatProperties?: any,
+	uninterestingTags?: any,
+	polygonFeatures?: any 
 }
 
 declare function osmtogeojson(data: any): any;

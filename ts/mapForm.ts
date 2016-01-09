@@ -23,8 +23,12 @@ module t {
 
 		load(): void
 		{
-			$.getJSON('./data/dresden_hbf.geojson', (geojson) => {
-				console.log(geojson);
+			$.getJSON('./data/dresden_hbf.json', (json) => {
+				console.log("-", json)
+				let geojson = osmtogeojson(json, {
+					flatProperties: true,
+					polygonFeatures: () => true //all closed lines are polygons
+				});
 				L.geoJson(geojson, {
 					filter: (feature) => this._layerFilter(feature), //`() =>` to keep scope
 					style: (feature) => this._styleGeoJson(feature) //`() =>` to keep scope
@@ -36,7 +40,6 @@ module t {
 		 */
 		_layerFilter(feature: any): boolean
 		{
-			//console.log(feature);
 			let properties = feature.properties;
 			if (properties.level)
 			{
