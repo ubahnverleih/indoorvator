@@ -8,8 +8,7 @@
 			"fillColor": "#FFF",
 			"weight": 2,
 			"opacity": 1,
-			"fillOpacity": 1,
-			"fillRule": "nonzero"
+			"fillOpacity": 1
 		},
 		"valueStyles": [{
 			"value": "corridor",
@@ -30,9 +29,73 @@
 			"fillOpacity": 1,
 			"weight": 2,
 			"opacity": 1,
-			"fillRule": "nonzero",
-			"className": "style-room"
+			"showText": true,
+			"markerClassName": "label-room"
 		},
 		"valueStyles": []
+	},
+	{
+		"key": "shop",
+		"style": {
+			"showText": true,
+			"className": "roomLabel",
+			"labelMinZoom": 20,
+			"iconMinZoom": 19
+		},
+		"valueStyles": [{
+			"value": "bakery",
+			"style": {
+				"iconUrl": "./img/mapicons/bakery.png",
+				"markerClassName": "label-bakery"
+			}
+		}]
+	},
+	{
+		"key": "railway",
+		"style": {
+
+		},
+		"valueStyles": [{
+			"value": "platform",
+			"style": {
+				"stroke": true,
+				"color": "#575757",
+				"fill": true,
+				"fillColor": "#B3B3B3",
+				"weight": 2,
+				"opacity": 1,
+				"fillOpacity": 1
+			}
+		}]
+	},
+	{
+		"key": "highway",
+		"style": {
+
+		},
+		"valueStyles": [{
+			"value": "footway",
+			"style": {
+				"stroke": true,
+				"color": "#B3B3B3",
+				"fill": false,
+				"weight": 6,
+				"opacity": 1,
+				"dashArray": [12,3],
+				"lineCap": "sqare"
+			}
+		},
+		{
+			"value": "steps",
+			"style": {
+				"stroke": true,
+				"color": "#575757",
+				"fill": false,
+				"weight": 8,
+				"opacity": 1,
+				"dashArray": [3,3],
+				"lineCap": "sqare"
+			}
+		}]
 	}
 ]
