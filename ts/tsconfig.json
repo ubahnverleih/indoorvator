@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "out": "../js/application.js",
+        "sourceMap": true
+    },
+    "files": [
+    	"index.ts",
+    	"mapForm.ts"
+    ]
+}
