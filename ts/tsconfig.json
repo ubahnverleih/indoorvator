@@ -9,6 +9,7 @@
     },
     "files": [
     	"index.ts",
-    	"mapForm.ts"
+    	"mapForm.ts",
+        "styleParser.ts"
     ]
 }

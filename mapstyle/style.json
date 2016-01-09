@@ -1,0 +1,38 @@
+[
+	{
+		"key": "indoor",
+		"style": {
+			"stroke": true,
+			"color": "#000",
+			"fill": true,
+			"fillColor": "#FFF",
+			"weight": 2,
+			"opacity": 1,
+			"fillOpacity": 1,
+			"fillRule": "nonzero"
+		},
+		"valueStyles": [{
+			"value": "corridor",
+			"style": {
+				"stroke": false,
+				"fillColor": "#FFF",
+				"fillOpacity": 1
+			}
+		}]
+	},
+	{
+		"key": "room",
+		"style": {
+			"stroke": true,
+			"color": "#000",
+			"fill": true,
+			"fillColor": "#FFFAD1",
+			"fillOpacity": 1,
+			"weight": 2,
+			"opacity": 1,
+			"fillRule": "nonzero",
+			"className": "style-room"
+		},
+		"valueStyles": []
+	}
+]

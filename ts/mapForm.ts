@@ -18,13 +18,15 @@ module t {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
 				maxZoom: 19
 			}).addTo(this.__map);
-			this.load();
+
+			this.loadStyle().then(() => this.load()); //First load Style, then load the mapdata
+			
 		}
 
 		load(): void
 		{
 			$.getJSON('./data/dresden_hbf.json', (json) => {
-				console.log("-", json)
+				console.log("--", json)
 				let geojson = osmtogeojson(json, {
 					flatProperties: true,
 					polygonFeatures: () => true //all closed lines are polygons
@@ -32,7 +34,15 @@ module t {
 				L.geoJson(geojson, {
 					filter: (feature) => this._layerFilter(feature), //`() =>` to keep scope
 					style: (feature) => this._styleGeoJson(feature) //`() =>` to keep scope
+					//pointToLayer: (feature) => this._styleMarker(feature)
 				}).addTo(this.__map);
+			});
+		}
+
+		loadStyle(): JQueryXHR
+		{
+			return $.getJSON('./mapstyle/style.json', (json) => {
+				this._style = json;
 			});
 		}
 		/**
@@ -59,20 +69,12 @@ module t {
 
 		_styleGeoJson(feature: any): any
 		{
-			let properties = feature.properties;
-			if (properties && properties["indoor"] && properties["indoor"] === "corridor")
-			{
-				return {
-					color: "#000",
-					weight: 1,
-					opacity: 1,
-					fillOpacity: 0.8,
-					fillColor: "#FFFFFF"
-				}
-			}
-			return {
-				"color": "#ff7800"
-			}
+			let s = styleParser.getSimpleStyleForFeature(feature, this._style);
+			styleParser.createLabelMarker(feature, this.__map);
+			/*if (s) 
+				console.log(s);*/
+			return s;
+			
 		}
 
 		/**
@@ -83,5 +85,9 @@ module t {
 		 * current map level
 		 */
 		private _level: number;
+		/**
+		 * Style
+		 */
+		private _style: any;
 	}
 }
