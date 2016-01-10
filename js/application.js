@@ -15,7 +15,7 @@ var t;
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
                 maxZoom: 22
             }).addTo(this.__map);
-            this.loadStyle().then(function () { return _this.load(); });
+            this.loadStyle().then(function () { return _this.load(); }).then(function () { return _this.loadDbElevators(); });
             this.__map.on('zoomend', function () {
                 _this.load();
             });
@@ -41,6 +41,7 @@ var t;
                     }
                 }).addTo(_this.__map);
                 _this.initLevelButtons();
+                _this.showElevators();
             });
             return xhr;
         };
@@ -145,6 +146,29 @@ var t;
                     marker.addTo(_this.__map);
                 }, 1500);
             });
+        };
+        mapForm.prototype.loadDbElevators = function () {
+            var _this = this;
+            this._elevatorMarkers = [];
+            console.log('load..');
+            $.getJSON("http://adam.noncd.db.de/api/v1.0/facilities", function (json) {
+                if (json) {
+                    json.forEach(function (elevator) {
+                        console.log(elevator);
+                        var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX]);
+                        _this._elevatorMarkers.push(marker);
+                    });
+                }
+            });
+            this.showElevators();
+        };
+        mapForm.prototype.showElevators = function () {
+            var _this = this;
+            if (this._elevatorMarkers) {
+                this._elevatorMarkers.forEach(function (marker) {
+                    marker.addTo(_this.__map);
+                });
+            }
         };
         return mapForm;
     })();

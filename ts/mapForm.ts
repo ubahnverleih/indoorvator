@@ -9,6 +9,7 @@ module t {
 			this.initMap();
 
 			$('#simulatebutton').on('click', () => this.simulateBrokenLift());
+			
 		}
 
 		initMap(): void
@@ -26,7 +27,7 @@ module t {
 				maxZoom: 22
 			}).addTo(this.__map);
 
-			this.loadStyle().then(() => this.load()); //First load Style, then load the mapdata
+			this.loadStyle().then(() => this.load()).then(() => this.loadDbElevators()); //First load Style, then load the mapdata
 
 			this.__map.on('zoomend', () => {
 				this.load();
@@ -58,6 +59,7 @@ module t {
 					}
 				}).addTo(this.__map);
 				this.initLevelButtons();
+				this.showElevators();
 			});
 			return xhr;
 		}
@@ -202,8 +204,33 @@ module t {
 
 				}, 1500);
 			});
+		}
 
+		loadDbElevators()
+		{
+			this._elevatorMarkers = [];
+			console.log('load..');
+			$.getJSON("http://adam.noncd.db.de/api/v1.0/facilities", (json) => {
+				if (json)
+				{
+					json.forEach((elevator: any) => {
+						console.log(elevator);
+						var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX]);
+						this._elevatorMarkers.push(marker);
+					});
+				}
+			});
+			this.showElevators();
+		}
 
+		showElevators(): void
+		{
+			if (this._elevatorMarkers)
+			{
+				this._elevatorMarkers.forEach((marker) => {
+					marker.addTo(this.__map);
+				});
+			}
 		}
 
 
@@ -223,5 +250,7 @@ module t {
 		 * List of all available Levels
 		 */
 		private _levelList: number[];
+
+		private _elevatorMarkers: L.Marker[];
 	}
 }
