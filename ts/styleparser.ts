@@ -57,22 +57,32 @@ module t {
 			let featureStyle = this.getSimpleStyleForFeature(feature, styleJson);
 			let label = "";
 			
-			//label limit
-			if ((!featureStyle.labelMinZoom) || (zoom >= featureStyle.labelMinZoom))
+			//icon limit
+			if ((!featureStyle.iconMinZoom) || (zoom >= featureStyle.iconMinZoom))
 			{
-				console.log("textzuweisen", feature.properties.name);
-				label = feature.properties.name ? '<div class="label-text">' + feature.properties.name + '</div>' : "";
-			}
+				//label limit
+				if ((!featureStyle.labelMinZoom) || (zoom >= featureStyle.labelMinZoom))
+				{
+					label = feature.properties.name ? '<div class="label-text">' + feature.properties.name + '</div>' : "";
+				}
 
-			let icon = new L.DivIcon({
-				//iconUrl: "http://osm.lyrk.de/address/leaflet/images/marker-iconred.png",
-				html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
-				+ label,
-				className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
-				iconAnchor: <any>[50, 50]
-			});
-			//console.log(icon);
-			return icon;
+				let icon = new L.DivIcon({
+					//iconUrl: "http://osm.lyrk.de/address/leaflet/images/marker-iconred.png",
+					html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
+					+ label,
+					className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
+					iconAnchor: <any>[50, 50]
+				});
+				//console.log(icon);
+				return icon;
+			}
+			else {
+				let icon = new L.DivIcon({
+					html: "",
+					className: "label-empty"
+				})
+				return icon;
+			}
 		}
 	}
 }

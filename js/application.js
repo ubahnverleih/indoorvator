@@ -20,6 +20,7 @@ var t;
         };
         mapForm.prototype.load = function () {
             var _this = this;
+            this._levelList = [];
             var xhr = $.getJSON('./data/dresden_hbf.json', function (json) {
                 var geojson = osmtogeojson(json, {
                     flatProperties: true,
@@ -37,6 +38,7 @@ var t;
                         return _this.createsStyledMarker(feature, latlng);
                     }
                 }).addTo(_this.__map);
+                _this.initLevelButtons();
             });
             return xhr;
         };
@@ -51,6 +53,7 @@ var t;
             if (properties.level) {
                 var level = properties.level;
                 var parsedLevels = this.parseLevel(level);
+                this.addToLevelList(parsedLevels);
                 if ($.inArray(this._level, parsedLevels) !== -1) {
                     return true;
                 }
@@ -85,11 +88,33 @@ var t;
             return new L.Marker(latlng);
         };
         mapForm.prototype.initLevelButtons = function () {
+            var _this = this;
+            console.log("init this");
             var levelContainer = $('#level');
+            levelContainer.html("");
+            this._levelList.forEach(function (level) {
+                var additionalClass = "";
+                if (_this._level === level) {
+                    additionalClass = " levelbutton-active";
+                }
+                var button = $('<div class="levelbutton ' + additionalClass + '">' + level + '</div>');
+                levelContainer.append(button);
+                button.on('click', function () { return _this.switchLevel(level); });
+            });
         };
         mapForm.prototype.switchLevel = function (level) {
             this._level = level;
             this.load();
+        };
+        mapForm.prototype.addToLevelList = function (levels) {
+            var _this = this;
+            levels.forEach(function (level) {
+                if ($.inArray(level, _this._levelList) == -1) {
+                    _this._levelList.push(level);
+                }
+            });
+            this._levelList.sort();
+            this._levelList = this._levelList.reverse();
         };
         return mapForm;
     })();
@@ -142,17 +167,25 @@ var t;
         styleParser.getIconForProperties = function (feature, styleJson, zoom) {
             var featureStyle = this.getSimpleStyleForFeature(feature, styleJson);
             var label = "";
-            if ((!featureStyle.labelMinZoom) || (zoom >= featureStyle.labelMinZoom)) {
-                console.log("textzuweisen", feature.properties.name);
-                label = feature.properties.name ? '<div class="label-text">' + feature.properties.name + '</div>' : "";
+            if ((!featureStyle.iconMinZoom) || (zoom >= featureStyle.iconMinZoom)) {
+                if ((!featureStyle.labelMinZoom) || (zoom >= featureStyle.labelMinZoom)) {
+                    label = feature.properties.name ? '<div class="label-text">' + feature.properties.name + '</div>' : "";
+                }
+                var icon = new L.DivIcon({
+                    html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
+                        + label,
+                    className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
+                    iconAnchor: [50, 50]
+                });
+                return icon;
             }
-            var icon = new L.DivIcon({
-                html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
-                    + label,
-                className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
-                iconAnchor: [50, 50]
-            });
-            return icon;
+            else {
+                var icon = new L.DivIcon({
+                    html: "",
+                    className: "label-empty"
+                });
+                return icon;
+            }
         };
         return styleParser;
     })();

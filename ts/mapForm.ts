@@ -34,6 +34,7 @@ module t {
 
 		load(): JQueryXHR
 		{
+			this._levelList = [];
 			let xhr = $.getJSON('./data/dresden_hbf.json', (json) => {
 				let geojson = osmtogeojson(json, {
 					flatProperties: true,
@@ -54,6 +55,7 @@ module t {
 						return this.createsStyledMarker(feature, latlng);
 					}
 				}).addTo(this.__map);
+				this.initLevelButtons();
 			});
 			return xhr;
 		}
@@ -74,7 +76,10 @@ module t {
 			{
 				let level = properties.level;
 				let parsedLevels = this.parseLevel(level)
-				//TODO: filter multilevel objects
+				
+				//add parsedLevels to Levellist
+				this.addToLevelList(parsedLevels);
+
 				if ($.inArray(this._level, parsedLevels) !== -1)
 				{
 					return true;
@@ -127,15 +132,39 @@ module t {
 
 		initLevelButtons(): void
 		{
+			console.log("init this");
 			let levelContainer = $('#level');
+			levelContainer.html("");
+			this._levelList.forEach((level) => {
+				let additionalClass = "";
+				if (this._level === level)
+				{
+					additionalClass = " levelbutton-active";
+				}
+				let button = $('<div class="levelbutton'+additionalClass+'">'+level+'</div>');
+				
+				levelContainer.append(button);
+				button.on('click', () => this.switchLevel(level));
+			});
 		}
 
 		switchLevel(level: number)
 		{
 			this._level = level;
-			//TODO clear all styles
 			this.load();
 		}
+
+		addToLevelList(levels: number[])
+		{
+			levels.forEach((level) => {
+				if ($.inArray(level, this._levelList) == -1) {
+					this._levelList.push(level);
+				}
+			});
+			this._levelList.sort()
+			this._levelList = this._levelList.reverse();
+		}
+
 
 		/**
 		 * Leaflet Mapobject
@@ -149,5 +178,9 @@ module t {
 		 * Style
 		 */
 		private _style: any;
+		/**
+		 * List of all available Levels
+		 */
+		private _levelList: number[];
 	}
 }

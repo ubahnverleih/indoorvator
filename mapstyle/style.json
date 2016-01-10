@@ -56,7 +56,7 @@
 			"style": {
 				"iconUrl": "./img/mapicons/supermarket.png",
 				"labelMinZoom": 19,
-				"iconMinZoom": 18,
+				"iconMinZoom": 18
 			}
 		}]
 	},
@@ -74,7 +74,7 @@
 				"iconUrl": "./img/mapicons/coffee.png",
 				"markerClassName": "label-bakery",
 				"labelMinZoom": 19,
-				"iconMinZoom": 18,
+				"iconMinZoom": 18
 			}
 		},
 		{
@@ -83,7 +83,7 @@
 				"iconUrl": "./img/mapicons/restaurant.png",
 				"markerClassName": "label-bakery",
 				"labelMinZoom": 19,
-				"iconMinZoom": 18,
+				"iconMinZoom": 18
 			}
 		},
 		{
@@ -91,7 +91,7 @@
 			"style": {
 				"iconUrl": "./img/mapicons/fastfood.png",
 				"markerClassName": "label-bakery",
-				"iconMinZoom": 18,
+				"iconMinZoom": 18
 			}
 		}]
 	},

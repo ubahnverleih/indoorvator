@@ -33,6 +33,12 @@
 				text-align: center;
 				text-align: bold;
 				width: 100px;
+				line-height: 12px;
+				text-shadow: 
+					-1px -1px 0px rgba(255, 255, 255, 1),
+					1px 1px 0px rgba(255, 255, 255, 1),
+					-1px 1px 0px rgba(255, 255, 255, 1),
+					1px -1px 0px rgba(255, 255, 255, 1);
 			}
 			.label-icon
 			{
@@ -71,8 +77,34 @@
 			#level
 			{
 				position: absolute;
-				bottom: 10px;
+				bottom: 30px;
 				right: 10px;
+				background: rgba(255,255,255,0.6);
+				border-radius: 5px;
+				padding: 5px;
+			}
+
+			.levelbutton
+			{
+				border-radius: 2px;
+				height: 40px;
+				width: 40px;
+				background: #FFF;
+				cursor: pointer;
+				text-align: center;
+				line-height: 40px;
+				font-size: 20px;
+				font-family: sans-serif;
+				margin-top: 5px;
+			}
+			.levelbutton:first-child
+			{
+				margin-top: 0px;
+			}
+			.levelbutton-active
+			{
+				background-color: #737373;
+				color: white;
 			}
 			
 		</style>
