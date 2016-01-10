@@ -150,12 +150,18 @@ var t;
         mapForm.prototype.loadDbElevators = function () {
             var _this = this;
             this._elevatorMarkers = [];
-            console.log('load..');
+            console.log('load');
             $.getJSON("http://adam.noncd.db.de/api/v1.0/facilities", function (json) {
                 if (json) {
                     json.forEach(function (elevator) {
                         console.log(elevator);
-                        var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX]);
+                        var icon = new L.Icon({
+                            iconUrl: "./img/mapicons/" + ((elevator.state == "INACTIVE") ? "elevator_red_filled.png" : "elevator_green_filled.png"),
+                            iconAnchor: new L.Point(12, 14)
+                        });
+                        var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX], {
+                            icon: icon
+                        });
                         _this._elevatorMarkers.push(marker);
                     });
                 }

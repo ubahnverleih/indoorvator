@@ -209,13 +209,20 @@ module t {
 		loadDbElevators()
 		{
 			this._elevatorMarkers = [];
-			console.log('load..');
+			console.log('load');
 			$.getJSON("http://adam.noncd.db.de/api/v1.0/facilities", (json) => {
 				if (json)
 				{
 					json.forEach((elevator: any) => {
 						console.log(elevator);
-						var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX]);
+						let icon = new L.Icon({
+							iconUrl: "./img/mapicons/" + ((elevator.state == "INACTIVE") ? "elevator_red_filled.png" : "elevator_green_filled.png"),
+							iconAnchor: new L.Point(12, 14)
+						})
+
+						var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX], {
+							icon: icon
+						});
 						this._elevatorMarkers.push(marker);
 					});
 				}
