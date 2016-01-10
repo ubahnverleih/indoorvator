@@ -20,7 +20,7 @@ module t {
 						selection["valueStyles"].forEach((valueStyle: any) => {
 							if (properties[key] == valueStyle.value)
 							{
-								$.extend(style, valueStyle["style"]);
+								$.extend(style, valueStyle["style"]); //merge new style parts in existing style (and overwrite existing properties with new ones)
 							}
 						})
 					}
@@ -44,25 +44,35 @@ module t {
 					let polygon = new L.Polygon(coordinates);
 					let point = polygon.getBounds().getCenter();
 
-					let label = "";
-					//einschalten sobald bei jedem zoom neu geladen und damit gerendert wird
-					//if (!featureStyle.labelMinZoom || (zoom >= featureStyle.labelMinZoom.labelMinZoom))
-					//{
-					label = feature.properties.name ? '<div class="label-text">' + feature.properties.name + '</div>' : "";
-					//}
-
-					let icon = new L.DivIcon({
-						//iconUrl: "http://osm.lyrk.de/address/leaflet/images/marker-iconred.png",
-						html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
-						+ label,
-						className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
-						iconAnchor: <any>[50, 50]
-					});
+					let icon = this.getIconForProperties(feature, styleJson, zoom);
 					let marker = new L.Marker(point, { icon: icon });
 
 					return marker;
 				}
 			}
+		}
+
+		public static getIconForProperties(feature: any, styleJson: any[], zoom: number): L.Icon
+		{
+			let featureStyle = this.getSimpleStyleForFeature(feature, styleJson);
+			let label = "";
+			
+			//label limit
+			if ((!featureStyle.labelMinZoom) || (zoom >= featureStyle.labelMinZoom))
+			{
+				console.log("textzuweisen", feature.properties.name);
+				label = feature.properties.name ? '<div class="label-text">' + feature.properties.name + '</div>' : "";
+			}
+
+			let icon = new L.DivIcon({
+				//iconUrl: "http://osm.lyrk.de/address/leaflet/images/marker-iconred.png",
+				html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
+				+ label,
+				className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
+				iconAnchor: <any>[50, 50]
+			});
+			//console.log(icon);
+			return icon;
 		}
 	}
 }

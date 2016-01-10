@@ -40,13 +40,58 @@
 			"showText": true,
 			"className": "roomLabel",
 			"labelMinZoom": 20,
-			"iconMinZoom": 19
+			"iconMinZoom": 19,
+			"iconUrl": "./img/mapicons/shop.png",
+			"markerClassName": "label-shop"
 		},
 		"valueStyles": [{
 			"value": "bakery",
 			"style": {
 				"iconUrl": "./img/mapicons/bakery.png",
 				"markerClassName": "label-bakery"
+			}
+		},
+		{
+			"value": "supermarket",
+			"style": {
+				"iconUrl": "./img/mapicons/supermarket.png",
+				"labelMinZoom": 19,
+				"iconMinZoom": 18,
+			}
+		}]
+	},
+	{
+		"key": "amenity",
+		"style": {
+			"showText": true,
+			"className": "roomLabel",
+			"labelMinZoom": 20,
+			"iconMinZoom": 19
+		},
+		"valueStyles": [{
+			"value": "cafe",
+			"style": {
+				"iconUrl": "./img/mapicons/coffee.png",
+				"markerClassName": "label-bakery",
+				"labelMinZoom": 19,
+				"iconMinZoom": 18,
+			}
+		},
+		{
+			"value": "restaurant",
+			"style": {
+				"iconUrl": "./img/mapicons/restaurant.png",
+				"markerClassName": "label-bakery",
+				"labelMinZoom": 19,
+				"iconMinZoom": 18,
+			}
+		},
+		{
+			"value": "fast_food",
+			"style": {
+				"iconUrl": "./img/mapicons/fastfood.png",
+				"markerClassName": "label-bakery",
+				"iconMinZoom": 18,
 			}
 		}]
 	},
@@ -95,6 +140,22 @@
 				"opacity": 1,
 				"dashArray": [3,3],
 				"lineCap": "sqare"
+			}
+		},
+		{
+			"value": "elevator",
+			"style": {
+				"stroke": true,
+				"color": "#B3B3B3",
+				"fillColor": "#B3B3B3",
+				"fill": true,
+				"weight": 0,
+				"opacity": 1,
+				"fillOpacity": 1,
+				"lineCap": "sqare",
+				"showText": true,
+				"iconUrl": "./img/mapicons/elevator_green_filled.png",
+				"markerClassName": "label-elevator"
 			}
 		}]
 	}

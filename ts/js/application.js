@@ -15,7 +15,13 @@ var t;
             }).addTo(this.__map);
             this.loadStyle().then(function () { return _this.load(); });
             this.__map.on('zoomend', function () {
-                _this.load();
+                _this.load().then(function () {
+                    _this.__map.eachLayer(function (layer) {
+                        if (!(layer instanceof L.TileLayer)) {
+                            _this.__map.removeLayer(layer);
+                        }
+                    });
+                });
             });
         };
         mapForm.prototype.load = function () {
@@ -24,11 +30,6 @@ var t;
                 var geojson = osmtogeojson(json, {
                     flatProperties: true,
                     polygonFeatures: function () { return true; }
-                });
-                _this.__map.eachLayer(function (layer) {
-                    if (!(layer instanceof L.TileLayer)) {
-                        _this.__map.removeLayer(layer);
-                    }
                 });
                 L.geoJson(geojson, {
                     filter: function (feature) { return _this._layerFilter(feature); },
@@ -142,8 +143,7 @@ var t;
         styleParser.getIconForProperties = function (feature, styleJson, zoom) {
             var featureStyle = this.getSimpleStyleForFeature(feature, styleJson);
             var label = "";
-            if ((!featureStyle.labelMinZoom) || (zoom >= featureStyle.labelMinZoom)) {
-                console.log("textzuweisen", feature.properties.name);
+            if (!featureStyle.labelMinZoom || (zoom >= featureStyle.labelMinZoom.labelMinZoom)) {
                 label = feature.properties.name ? '<div class="label-text">' + feature.properties.name + '</div>' : "";
             }
             var icon = new L.DivIcon({

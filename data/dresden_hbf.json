@@ -2,10 +2,213 @@
   "version": 0.6,
   "generator": "Overpass API",
   "osm3s": {
-    "timestamp_osm_base": "2016-01-09T14:31:02Z",
+    "timestamp_osm_base": "2016-01-10T12:29:02Z",
     "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
   },
   "elements": [
+    {
+      "type": "node",
+      "id": 251740154,
+      "lat": 51.0401385,
+      "lon": 13.7336264,
+      "tags": {
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "capacity": "46",
+        "covered": "yes",
+        "level": "0"
+      }
+    },
+    {
+      "type": "node",
+      "id": 251740155,
+      "lat": 51.0400834,
+      "lon": 13.7338018,
+      "tags": {
+        "amenity": "bicycle_parking",
+        "bicycle_parking": "stands",
+        "capacity": "54",
+        "covered": "yes",
+        "level": "0"
+      }
+    },
+    {
+      "type": "node",
+      "id": 339700759,
+      "lat": 51.0422685,
+      "lon": 13.7345675,
+      "tags": {
+        "level": "0",
+        "name": "dm",
+        "opening_hours": "Mo-Sa 09:00-20:00",
+        "shop": "chemist",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 346813975,
+      "lat": 51.0394354,
+      "lon": 13.7327378,
+      "tags": {
+        "level": "1",
+        "operator": "DB Netz",
+        "railway": "signal",
+        "railway:signal:direction": "backward",
+        "railway:signal:position": "left",
+        "railway:signal:stop": "DE-ESO:ne5",
+        "railway:signal:stop:caption": "260m",
+        "railway:signal:stop:form": "sign",
+        "railway:signal:stop:height": "normal",
+        "source": "survey"
+      }
+    },
+    {
+      "type": "node",
+      "id": 352657960,
+      "lat": 51.041324,
+      "lon": 13.7347621,
+      "tags": {
+        "amenity": "fast_food",
+        "cuisine": "soup;sushi",
+        "description": "Restaurant und Blumenladen",
+        "level": "0",
+        "name": "Vita Life",
+        "note": "Ja, das ist wirklich ein Blumenladen und Sushi Restaurant",
+        "old_name": "Ideen und Gestaltung",
+        "opening_hours": "Mo-Sa 08:00-20:00; Su 08:00-14:00",
+        "shop": "florist",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 352657962,
+      "lat": 51.0412373,
+      "lon": 13.7347113,
+      "tags": {
+        "amenity": "pharmacy",
+        "dispensing": "yes",
+        "level": "0",
+        "name": "Stadt Apotheke",
+        "opening_hours": "Mo-Fr 08:00-20:00; Sa 09:00-18:00",
+        "website": "http://www.fetscherapotheke.de",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 370449217,
+      "lat": 51.0402544,
+      "lon": 13.7336472,
+      "tags": {
+        "amenity": "taxi",
+        "covered": "yes",
+        "level": "0",
+        "presence": "24/7"
+      }
+    },
+    {
+      "type": "node",
+      "id": 373093659,
+      "lat": 51.0401197,
+      "lon": 13.7322544,
+      "tags": {
+        "amenity": "vending_machine",
+        "fixme": "ref ergänzen/nochmal prüfen",
+        "level": "0",
+        "operator": "DB Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "ref": "B81492",
+        "source": "extrapolation; estimation; survey",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 373097029,
+      "lat": 51.0409148,
+      "lon": 13.7342434,
+      "tags": {
+        "amenity": "cafe",
+        "level": "0",
+        "name": "Eiscafé Ciao",
+        "note": "Seit Juli 2013 nur noch mit Verkaufsschalter und Außenanlage",
+        "smoking": "no",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 395585979,
+      "lat": 51.0402844,
+      "lon": 13.7319757,
+      "tags": {
+        "amenity": "vending_machine",
+        "level": "0",
+        "operator": "DB Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "ref": "B81415",
+        "source": "extrapolation",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 395585991,
+      "lat": 51.0400332,
+      "lon": 13.7323447,
+      "tags": {
+        "amenity": "vending_machine",
+        "level": "0",
+        "operator": "DB Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 721984513,
+      "lat": 51.0395169,
+      "lon": 13.7321207,
+      "tags": {
+        "level": "0",
+        "name": "RVD Service Center",
+        "note": "Seit Mitte 2014 hier, zuvor am RVD-Standort Ammonstraße 25",
+        "opening_hours": "Mo-Fr 09:45-18:00; Sa 09:00-12:00",
+        "phone": "+49 351 4921357",
+        "shop": "travel_agency"
+      }
+    },
+    {
+      "type": "node",
+      "id": 725613776,
+      "lat": 51.0399669,
+      "lon": 13.7331451,
+      "tags": {
+        "alt_name": "Vor dem Eingang 1",
+        "amenity": "telephone",
+        "internet_access": "no",
+        "level": "0",
+        "operator": "Deutsche Telekom AG",
+        "phone": "+49 351 4174338",
+        "ref": "Am Hauptbahnhof 4",
+        "sms": "yes",
+        "source": "estimation"
+      }
+    },
     {
       "type": "node",
       "id": 732011056,
@@ -14,8 +217,89 @@
       "tags": {
         "bicycle": "yes",
         "highway": "elevator",
+        "level": "0;1",
         "operator": "DB Station&Service AG",
         "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 988900672,
+      "lat": 51.0400381,
+      "lon": 13.7320656,
+      "tags": {
+        "addr:city": "Dresden",
+        "addr:country": "DE",
+        "addr:housenumber": "4",
+        "addr:postcode": "01069",
+        "addr:street": "Wiener Platz",
+        "level": "0",
+        "name": "k presse + buch",
+        "opening_hours": "Mo-Sa 05:00-22:00; Su 06:00-22:00",
+        "operator": "BHG Bahnhofs-Handels-Vertriebs GmbH",
+        "shop": "newsagent",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1115480834,
+      "lat": 51.0423347,
+      "lon": 13.7345986,
+      "tags": {
+        "level": "-1",
+        "name": "Spiele Max",
+        "opening_hours": "Mo-Sa 10:00-20:00",
+        "shop": "toys",
+        "website": "www.spielemax.de",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1128425876,
+      "lat": 51.0402097,
+      "lon": 13.7330034,
+      "tags": {
+        "amenity": "atm",
+        "construction": "yes",
+        "level": "0",
+        "operator": "Euronet",
+        "ref": "2058",
+        "source": "estimation",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1282407469,
+      "lat": 51.0398987,
+      "lon": 13.7350272,
+      "tags": {
+        "addr:city": "Dresden",
+        "addr:country": "DE",
+        "addr:housenumber": "1",
+        "addr:postcode": "01069",
+        "addr:street": "Wiener Platz",
+        "amenity": "stripclub",
+        "level": "0",
+        "name": "Angels",
+        "note": "In den Bahnbögen",
+        "opening_hours": "Tu-Sa 21:00-05:00",
+        "website": "www.angels-dresden.de",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1600805708,
+      "lat": 51.0404562,
+      "lon": 13.7332505,
+      "tags": {
+        "historic": "memorial",
+        "level": "0",
+        "name": "Gedenktafel Oktober 1989",
+        "wheelchair": "limited"
       }
     },
     {
@@ -44,12 +328,1022 @@
     },
     {
       "type": "node",
+      "id": 1776509483,
+      "lat": 51.0409007,
+      "lon": 13.7316542,
+      "tags": {
+        "amenity": "telephone",
+        "covered": "yes",
+        "level": "1",
+        "operator": "Deutsche Telekom",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:telephone_cards": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1826484949,
+      "lat": 51.0404785,
+      "lon": 13.7333504,
+      "tags": {
+        "emergency": "phone",
+        "level": "0",
+        "note": "Notruf- und Informationssäule",
+        "operator": "Deutsche Bahn"
+      }
+    },
+    {
+      "type": "node",
+      "id": 1949205796,
+      "lat": 51.0401243,
+      "lon": 13.7318506,
+      "tags": {
+        "amenity": "fast_food",
+        "cuisine": "baguette",
+        "level": "0",
+        "name": "Le Crobag",
+        "opening_hours": "Mo-Th 04:30-20:00; Fr 04:30-21:30; Sa 05:00-20:00; Su 05:30-21:00",
+        "operator": "J. Burkhardt",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2058586770,
+      "lat": 51.0401747,
+      "lon": 13.7331009,
+      "tags": {
+        "amenity": "telephone",
+        "contact:phone": "+49 351 4519386",
+        "level": "0",
+        "operator": "Deutsche Telekom",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:telephone_cards": "yes",
+        "source": "estimation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2058586775,
+      "lat": 51.0402,
+      "lon": 13.7330284,
+      "tags": {
+        "amenity": "telephone",
+        "contact:phone": "+49 351 4519115",
+        "level": "0",
+        "operator": "Deutsche Telekom",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:telephone_cards": "yes",
+        "ref": "Kuppelhalle zu Durchgang 2",
+        "source": "estimation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2058586783,
+      "lat": 51.0402348,
+      "lon": 13.7322537,
+      "tags": {
+        "amenity": "telephone",
+        "level": "0",
+        "operator": "Deutsche Telekom",
+        "payment:coins": "yes",
+        "payment:credit_cards": "no",
+        "payment:telephone_cards": "no",
+        "source": "estimation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2065658772,
+      "lat": 51.039732,
+      "lon": 13.7327161,
+      "tags": {
+        "amenity": "telephone",
+        "level": "0",
+        "operator": "Deutsche Telekom",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:telephone_cards": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2065658773,
+      "lat": 51.0397528,
+      "lon": 13.7326406,
+      "tags": {
+        "amenity": "telephone",
+        "level": "0",
+        "operator": "Deutsche Telekom",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:telephone_cards": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2071173887,
+      "lat": 51.0403756,
+      "lon": 13.7320612,
+      "tags": {
+        "capacity": "2",
+        "level": "0",
+        "name": "DB Information",
+        "opening_hours": "Mo-Su 06:00-22:30",
+        "operator": "DB Station&Service AG",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2071173895,
+      "lat": 51.0402301,
+      "lon": 13.7319313,
+      "tags": {
+        "amenity": "vending_machine",
+        "level": "0",
+        "operator": "DB Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "ref": "B86520",
+        "source": "extrapolation",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2071173896,
+      "lat": 51.0402976,
+      "lon": 13.7319835,
+      "tags": {
+        "amenity": "vending_machine",
+        "level": "0",
+        "operator": "DB Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "ref": "B86521",
+        "source": "extrapolation",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2204521707,
+      "lat": 51.0404209,
+      "lon": 13.7323485,
+      "tags": {
+        "amenity": "telephone",
+        "covered": "yes",
+        "internet_access": "terminal",
+        "level": "0",
+        "operator": "Deutsche Telekom",
+        "source": "extrapolation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2204521708,
+      "lat": 51.0404322,
+      "lon": 13.7323434,
+      "tags": {
+        "amenity": "atm",
+        "covered": "yes",
+        "level": "0",
+        "operator": "Cardpoint",
+        "source": "extrapolation",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2239963097,
+      "lat": 51.0399131,
+      "lon": 13.7316458,
+      "tags": {
+        "layer": "1",
+        "level": "1",
+        "railway": "signal",
+        "railway:signal:departure": "DE-ESO:zp",
+        "railway:signal:departure:form": "light",
+        "railway:signal:departure:states": "DE-ESO:zp10;DE-ESO:zp9",
+        "railway:signal:direction": "forward",
+        "railway:signal:main": "DE-ESO:ks",
+        "railway:signal:main:form": "light",
+        "railway:signal:main:function": "exit",
+        "railway:signal:main:height": "normal",
+        "railway:signal:main:states": "DE-ESO:hp0;DE-ESO:ks1;DE-ESO:kennlicht",
+        "railway:signal:main:substitute_signal": "DE-ESO:db:zs7",
+        "railway:signal:minor": "DE-ESO:sh1",
+        "railway:signal:minor:form": "light",
+        "railway:signal:position": "right",
+        "railway:signal:route": "DE-ESO:zs2",
+        "railway:signal:route:form": "light",
+        "railway:signal:route:states": "S;T",
+        "railway:signal:speed_limit": "DE-ESO:zs3",
+        "railway:signal:speed_limit:form": "light",
+        "railway:signal:speed_limit:height": "normal",
+        "railway:signal:speed_limit:speed": "80;60;40",
+        "railway:signal:wrong_road": "DE-ESO:dr:zs7",
+        "railway:signal:wrong_road:form": "light",
+        "ref": "30P243"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2241125865,
+      "lat": 51.0407043,
+      "lon": 13.7330557,
+      "tags": {
+        "level": "-1",
+        "name": "Saigon Minimarkt",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515435,
+      "lat": 51.0398934,
+      "lon": 13.7341109,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "8",
+        "covered": "yes",
+        "layer": "1",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515436,
+      "lat": 51.0400412,
+      "lon": 13.7337083,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "12",
+        "covered": "yes",
+        "layer": "1",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515437,
+      "lat": 51.0400548,
+      "lon": 13.7342544,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "4",
+        "covered": "yes",
+        "layer": "1",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515438,
+      "lat": 51.0401953,
+      "lon": 13.7338344,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "12",
+        "covered": "yes",
+        "layer": "1",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
       "id": 2375515439,
       "lat": 51.0402032,
       "lon": 13.7331579,
       "tags": {
         "highway": "elevator",
         "operator": "DB Station&Service AG"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515440,
+      "lat": 51.0402229,
+      "lon": 13.7332772,
+      "tags": {
+        "layer": "1",
+        "level": "1",
+        "railway": "signal",
+        "railway:signal:direction": "backward",
+        "railway:signal:position": "left",
+        "railway:signal:stop": "DE-ESO:ne5",
+        "railway:signal:stop:caption": "190 m",
+        "railway:signal:stop:form": "sign",
+        "railway:signal:stop:height": "normal"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515441,
+      "lat": 51.0402964,
+      "lon": 13.7335135,
+      "tags": {
+        "level": "1",
+        "man_made": "surveillance",
+        "note": "Überwachungskamera auf Bahnsteig"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515443,
+      "lat": 51.0403623,
+      "lon": 13.7326705,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "covered": "yes",
+        "level": "1",
+        "seats": "4"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515444,
+      "lat": 51.040354,
+      "lon": 13.7331545,
+      "tags": {
+        "layer": "1",
+        "level": "1",
+        "note": "Haltetafel auf Bahnsteig",
+        "operator": "DB Netz",
+        "railway": "signal",
+        "railway:signal:direction": "forward",
+        "railway:signal:position": "left",
+        "railway:signal:stop": "DE-ESO:ne5",
+        "railway:signal:stop:caption": "160 m",
+        "railway:signal:stop:form": "sign",
+        "railway:signal:stop:height": "normal"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515445,
+      "lat": 51.0404491,
+      "lon": 13.7332365,
+      "tags": {
+        "layer": "1",
+        "level": "1",
+        "note": "Haltetafel auf Bahnsteig",
+        "railway": "signal",
+        "railway:signal:direction": "backward",
+        "railway:signal:position": "left",
+        "railway:signal:stop": "DE-ESO:ne5",
+        "railway:signal:stop:caption": "160 m",
+        "railway:signal:stop:form": "sign",
+        "railway:signal:stop:height": "normal"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515446,
+      "lat": 51.0406611,
+      "lon": 13.7318036,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "4",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515447,
+      "lat": 51.0407329,
+      "lon": 13.7315751,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "8",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515448,
+      "lat": 51.0407873,
+      "lon": 13.7314064,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "4",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515449,
+      "lat": 51.0408138,
+      "lon": 13.7319071,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "8",
+        "covered": "yes",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515450,
+      "lat": 51.0408319,
+      "lon": 13.7318462,
+      "tags": {
+        "amenity": "vending_machine",
+        "covered": "yes",
+        "level": "1",
+        "operator": "Deutsche Bahn",
+        "payment:account_cards": "yes",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "ref": "B81414",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515452,
+      "lat": 51.0408665,
+      "lon": 13.7317725,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "16",
+        "covered": "yes",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2375515453,
+      "lat": 51.0409358,
+      "lon": 13.7315515,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "capacity": "8",
+        "covered": "yes",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387220886,
+      "lat": 51.0397831,
+      "lon": 13.7314415,
+      "tags": {
+        "amenity": "cafe",
+        "level": "0",
+        "name": "Backwerk",
+        "opening_hours": "Mo-Sa 05:00-20:00; Su 06:00-20:00",
+        "operator": "Steven Kraft",
+        "shop": "bakery",
+        "start_date": "2013-08",
+        "wheelchair": "yes",
+        "wheelchair:description:de": "Ebenerdiger Zugang"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387220888,
+      "lat": 51.0399582,
+      "lon": 13.7318848,
+      "tags": {
+        "construction": "yes",
+        "information": "office",
+        "last_checked": "2015-12",
+        "level": "0",
+        "name": "Dresden Information",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "tourism": "information"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387220889,
+      "lat": 51.0399503,
+      "lon": 13.7316479,
+      "tags": {
+        "layer": "0",
+        "level": "0",
+        "name": "Görtz",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "shop": "clothes",
+        "start_date": "2013-08-08",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387220893,
+      "lat": 51.0397118,
+      "lon": 13.7316559,
+      "tags": {
+        "amenity": "fast_food",
+        "cuisine": "hot_dogs",
+        "level": "0",
+        "name": "Hot Dog King",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "start_date": "2013-08",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387220908,
+      "lat": 51.0396296,
+      "lon": 13.7317705,
+      "tags": {
+        "level": "0",
+        "name": "Orion",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "shop": "erotic",
+        "start_date": "2013-08-01"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387220931,
+      "lat": 51.0398839,
+      "lon": 13.7318429,
+      "tags": {
+        "contact:phone": "+49 351 8626982",
+        "level": "0",
+        "name": "Rossmann",
+        "note": "war bis Ende Juli 2013 in der südlich anschließenden City Center Passage",
+        "opening_hours": "Mo-Su 07:00-22:00",
+        "payment:account_cards": "yes",
+        "payment:credit_cards": "yes",
+        "ref": "2540",
+        "shop": "chemist",
+        "start_date": "2013-08-08",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2387220932,
+      "lat": 51.0398141,
+      "lon": 13.7318035,
+      "tags": {
+        "level": "0",
+        "name": "trendy",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "shop": "clothes",
+        "start_date": "2013-08-08",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2411639800,
+      "lat": 51.0394194,
+      "lon": 13.7324898,
+      "tags": {
+        "amenity": "pharmacy",
+        "level": "0",
+        "name": "City-Apotheke im Hauptbahnhof",
+        "opening_hours": "Mo-Fr 07:00-22:00; Sa, Su, Ph 08:00-22:00",
+        "operator": "Dr. Katja Scarlett Daub",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2411639810,
+      "lat": 51.0396538,
+      "lon": 13.7325207,
+      "tags": {
+        "contact:website": "www.vorwerkpodemus.de",
+        "level": "0",
+        "name": "Vorwerk Podemus",
+        "opening_hours": "Mo-Su 07:00-21:00",
+        "organic": "only",
+        "shop": "supermarket",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2458246639,
+      "lat": 51.0394641,
+      "lon": 13.7323645,
+      "tags": {
+        "level": "0",
+        "note": "Leerstehende Gewerbefläche (Stand: August 2015)",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2458246641,
+      "lat": 51.0396264,
+      "lon": 13.7326703,
+      "tags": {
+        "level": "0",
+        "name": "Nanu-Nana",
+        "opening_hours": "Mo-Sa 08:00-21:00; Su 09:00-20:00",
+        "shop": "gift",
+        "wheelchair": "yes",
+        "wheelchair:description:de": "Ebenerdiger Zugang"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2458246667,
+      "lat": 51.0404625,
+      "lon": 13.7333657,
+      "tags": {
+        "amenity": "vending_machine",
+        "covered": "yes",
+        "level": "0",
+        "operator": "Deutsche Bahn",
+        "ref": "B81411",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2498852128,
+      "lat": 51.0395196,
+      "lon": 13.7325886,
+      "tags": {
+        "level": "0",
+        "name": "Bonbon Manufaktur",
+        "shop": "confectionery",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2498852138,
+      "lat": 51.0394474,
+      "lon": 13.7339742,
+      "tags": {
+        "level": "1",
+        "man_made": "surveillance",
+        "source": "extrapolation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2498852139,
+      "lat": 51.0395706,
+      "lon": 13.7341359,
+      "tags": {
+        "emergency": "phone",
+        "level": "1",
+        "operator": "Deutsche Bahn"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2500054664,
+      "lat": 51.0405557,
+      "lon": 13.7321148,
+      "tags": {
+        "amenity": "cafe",
+        "contact:phone": "+49 351 42776967",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "level": "0",
+        "name": "Starbucks",
+        "opening_hours": "Mo-Fr 06:30-21:00; Sa, Su 06:30-21:00",
+        "operator": "Starbucks Coffee Deutschland GmbH",
+        "outdoor_seating": "no",
+        "smoking": "no",
+        "source": "extrapolation",
+        "start_date": "2013-11-28",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2529912269,
+      "lat": 51.0403917,
+      "lon": 13.733197,
+      "tags": {
+        "construction": "yes",
+        "level": "0",
+        "name": "Accessorize",
+        "shop": "boutique"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2546655023,
+      "lat": 51.0407611,
+      "lon": 13.7318499,
+      "tags": {
+        "addr:city": "Dresden",
+        "addr:housenumber": "4",
+        "addr:postcode": "01069",
+        "addr:street": "Wiener Platz",
+        "level": "0",
+        "name": "Lidl",
+        "opening_hours": "Mo-Su, PH 08:00-21:00",
+        "shop": "supermarket",
+        "source": "extrapolation",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2546655024,
+      "lat": 51.0406557,
+      "lon": 13.7325739,
+      "tags": {
+        "level": "0",
+        "name": "McPaper",
+        "opening_hours": "Mo-Su 08:00-20:00",
+        "shop": "stationery",
+        "source": "extrapolation",
+        "start_date": "2013-11-28",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2559033720,
+      "lat": 51.0408459,
+      "lon": 13.7318556,
+      "tags": {
+        "amenity": "vending_machine",
+        "covered": "yes",
+        "level": "1",
+        "operator": "Deutsche Bahn",
+        "payment:account_cards": "yes",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "ref": "B81412",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565541978,
+      "lat": 51.040244,
+      "lon": 13.7332526,
+      "tags": {
+        "description": "Zigarren,Zigarillos,Raucherbedarf,Tabakwaren,Lottoannahmestelle,Telefonkarten,Mobilfunkkarten",
+        "level": "0",
+        "lotto": "yes",
+        "name": "Barbarino",
+        "opening_hours": "Mo-Sa 06:00-21:00; Su 07:00-21:00",
+        "payment:account_cards": "yes",
+        "payment:credit_cards": "yes",
+        "shop": "tobacco",
+        "start_date": "2013-12-03"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565541982,
+      "lat": 51.0403664,
+      "lon": 13.7330319,
+      "tags": {
+        "level": "0",
+        "name": "Esprit",
+        "opening_hours": "08:00-21:00",
+        "shop": "clothes",
+        "start_date": "2013-11-28"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565541986,
+      "lat": 51.040415,
+      "lon": 13.7333892,
+      "tags": {
+        "contact:website": "www.baecker-walther.de/kexerei",
+        "level": "0",
+        "name": "KeXerei",
+        "opening_hours": "08:00-21:00",
+        "operator": "Matthias Walther",
+        "shop": "confectionery",
+        "start_date": "2013-11-28"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565541987,
+      "lat": 51.0403312,
+      "lon": 13.7330028,
+      "tags": {
+        "level": "0",
+        "note": "Das hier am 28. November 2013 eröffnete Bekleidungsgeschäft \"Mexx\" schloss Mitte 2015"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565541998,
+      "lat": 51.040283,
+      "lon": 13.7332857,
+      "tags": {
+        "level": "0",
+        "name": "P&B",
+        "note": "Bahnhofsbuchhandlung",
+        "opening_hours": "Mo-Su 04:30-22:00",
+        "operator": "BHF Bahnhofs-Handels-Vertriebs GmbH",
+        "ref": "378",
+        "shop": "newsagent",
+        "start_date": "2013-11-28"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565542080,
+      "lat": 51.0406316,
+      "lon": 13.7327256,
+      "tags": {
+        "amenity": "bank",
+        "atm": "no",
+        "level": "0",
+        "name": "ReiseBank",
+        "opening_hours": "Mo-Su 08:00-21:00",
+        "phone": "+49 351 4712177",
+        "start_date": "2013-11"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565542084,
+      "lat": 51.0405367,
+      "lon": 13.732411,
+      "tags": {
+        "level": "0",
+        "name": "Six",
+        "shop": "clothes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565542091,
+      "lat": 51.0405168,
+      "lon": 13.7330763,
+      "tags": {
+        "alt_name": "asiasnackbox",
+        "amenity": "fast_food",
+        "cuisine": "asian",
+        "level": "0",
+        "name": "asia gourmet",
+        "start_date": "2013-11"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2565542092,
+      "lat": 51.0407742,
+      "lon": 13.7323002,
+      "tags": {
+        "level": "0",
+        "name": "florizz",
+        "opening_hours": "Mo-Fr 06:00-20:00; Sa, Su 08:00-20:00",
+        "shop": "florist",
+        "start_date": "2013-11-28",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2576312789,
+      "lat": 51.0411211,
+      "lon": 13.7340702,
+      "tags": {
+        "amenity": "post_box",
+        "brand": "PostModern",
+        "collection_times": "Mo-Fr 17:00",
+        "level": "-1",
+        "operator": "MEDIA Logistik",
+        "source": "survey; extrapolation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2576312797,
+      "lat": 51.0417468,
+      "lon": 13.7348431,
+      "tags": {
+        "level": "1",
+        "name": "Woolworth",
+        "shop": "clothes",
+        "source": "survey",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2675542513,
+      "lat": 51.0406274,
+      "lon": 13.7318932,
+      "tags": {
+        "amenity": "police",
+        "level": "0",
+        "name": "Bundespolizei",
+        "note": "seit Ende 2013 an diesem Standort",
+        "source": "extrapolation"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2702948362,
+      "lat": 51.0403155,
+      "lon": 13.7332333,
+      "tags": {
+        "amenity": "atm",
+        "level": "0",
+        "operator": "Reisebank",
+        "ref": "260"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3124947748,
+      "lat": 51.0407856,
+      "lon": 13.7332193,
+      "tags": {
+        "amenity": "atm",
+        "description:de": "neben dem Parkhaus in Ebene -1",
+        "description:en": "beside underground parking at level -1",
+        "level": "-1",
+        "network": "Sparkasse",
+        "note": "FIXME:Parkhaus-Tiefgarage in -1 und -2 und kleine Einkaufspassage + Wege in -1 fehlen noch",
+        "operator": "Ostsächsische Sparkasse",
+        "wheelchair": "limited"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3201484929,
+      "lat": 51.0402452,
+      "lon": 13.731943,
+      "tags": {
+        "amenity": "vending_machine",
+        "level": "0",
+        "operator": "DB Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:debit_cards": "yes",
+        "payment:electronic_purses": "yes",
+        "payment:notes": "yes",
+        "ref": "B81416",
+        "source": "extrapolation",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3201485644,
+      "lat": 51.0405711,
+      "lon": 13.7324349,
+      "tags": {
+        "level": "0",
+        "name": "Calzedonia",
+        "note": "Das \"Werkhaus\" zog zum 15. August 2015 in die \"Centrum-Galerie\" um",
+        "old_name": "Werkhaus",
+        "shop": "clothes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3347410793,
+      "lat": 51.0397368,
+      "lon": 13.7319906,
+      "tags": {
+        "amenity": "vending_machine",
+        "description": "Süßigkeitenautomat auf dem Bahnsteig",
+        "level": "1",
+        "operator": "Geile Warenautomaten",
+        "payment:coins": "yes",
+        "payment:notes": "no",
+        "vending": "drinks;sweets",
+        "wheelchair": "yes"
       }
     },
     {
@@ -66,8 +1360,8 @@
     {
       "type": "node",
       "id": 3606015354,
-      "lat": 51.0396776,
-      "lon": 13.7327831,
+      "lat": 51.0396961,
+      "lon": 13.7327395,
       "tags": {
         "highway": "elevator",
         "level": "0;1",
@@ -86,6 +1380,82 @@
         "entrance": "yes",
         "foot": "yes",
         "indoor": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3759171087,
+      "lat": 51.0406747,
+      "lon": 13.7323275,
+      "tags": {
+        "amenity": "vending_machine",
+        "covered": "yes",
+        "level": "0",
+        "operator": "Deutsche Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:maestro": "yes",
+        "payment:notes": "yes",
+        "ref": "B81412",
+        "source": "extrapolation; survey",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3759171088,
+      "lat": 51.0406821,
+      "lon": 13.7323035,
+      "tags": {
+        "amenity": "vending_machine",
+        "covered": "yes",
+        "level": "0",
+        "operator": "Deutsche Bahn",
+        "payment:coins": "yes",
+        "payment:credit_cards": "yes",
+        "payment:maestro": "yes",
+        "payment:notes": "yes",
+        "ref": "B81414",
+        "source": "extrapolation; survey",
+        "vending": "public_transport_tickets"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3759171632,
+      "lat": 51.0392566,
+      "lon": 13.7331567,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "description": "Sitzbank auf Bahnsteig",
+        "level": "1",
+        "seats": "12"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3759171633,
+      "lat": 51.0394534,
+      "lon": 13.7331354,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "description": "Sitzbank auf Bahnsteig",
+        "level": "1",
+        "seats": "12"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3782582236,
+      "lat": 51.0388924,
+      "lon": 13.73166,
+      "tags": {
+        "amenity": "toilets",
+        "charge": "50 Cent",
+        "fee": "yes",
+        "level": "-1"
       }
     },
     {
@@ -126,12 +1496,38 @@
     },
     {
       "type": "node",
+      "id": 3812956742,
+      "lat": 51.0399918,
+      "lon": 13.7319035,
+      "tags": {
+        "amenity": "atm",
+        "covered": "yes",
+        "level": "0",
+        "operator": "Reisebank",
+        "ref": "273",
+        "source": "extrapolation",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
       "id": 3812956745,
       "lat": 51.0400044,
       "lon": 13.7312055,
       "tags": {
         "entrance": "yes",
         "indoor": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3812956755,
+      "lat": 51.04014,
+      "lon": 13.7321631,
+      "tags": {
+        "amenity": "telephone",
+        "level": "0",
+        "operator": "Deutsche Telekom"
       }
     },
     {
@@ -147,6 +1543,16 @@
     },
     {
       "type": "node",
+      "id": 3812957257,
+      "lat": 51.0401463,
+      "lon": 13.7321845,
+      "tags": {
+        "information": "board",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
       "id": 3812957258,
       "lat": 51.0401806,
       "lon": 13.7324774,
@@ -154,6 +1560,20 @@
         "entrance": "yes",
         "indoor": "yes",
         "level": "0"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3812957261,
+      "lat": 51.0402049,
+      "lon": 13.7322959,
+      "tags": {
+        "amenity": "atm",
+        "covered": "yes",
+        "level": "0",
+        "operator": "Cardpoint",
+        "source": "extrapolation",
+        "wheelchair": "yes"
       }
     },
     {
@@ -207,11 +1627,267 @@
     },
     {
       "type": "node",
+      "id": 3876268760,
+      "lat": 51.0405951,
+      "lon": 13.7324537,
+      "tags": {
+        "level": "0",
+        "name": "Street One",
+        "shop": "clothes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3929248173,
+      "lat": 51.0407311,
+      "lon": 13.7334846,
+      "tags": {
+        "amenity": "internet_cafe",
+        "level": "-1",
+        "name": "Call Shop & Internet Café Zak"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3929248174,
+      "lat": 51.0406831,
+      "lon": 13.7331349,
+      "tags": {
+        "level": "-1",
+        "name": "Floristik Saigon Minimarkt",
+        "shop": "florist",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3929248175,
+      "lat": 51.0406748,
+      "lon": 13.7332103,
+      "tags": {
+        "level": "-1",
+        "name": "Gemüse Saigon Minimarkt",
+        "shop": "greengrocer",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
       "id": 3929248189,
       "lat": 51.0407332,
       "lon": 13.7330665,
       "tags": {
-        "highway": "elevator"
+        "highway": "elevator",
+        "level": "-1;0"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3929248208,
+      "lat": 51.0406595,
+      "lon": 13.7332559,
+      "tags": {
+        "level": "-1",
+        "name": "1001 Nacht Orientalische Spezialitäten",
+        "shop": "convenience",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3930435379,
+      "lat": 51.0402734,
+      "lon": 13.7328407,
+      "tags": {
+        "door": "hinged",
+        "level": "0.5",
+        "repeat_on": "1.5"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875053,
+      "lat": 51.0405242,
+      "lon": 13.7328498,
+      "tags": {
+        "level": "1",
+        "vending": "ticket_validator"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875054,
+      "lat": 51.0405272,
+      "lon": 13.7328409,
+      "tags": {
+        "amenity": "waste_basket",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875055,
+      "lat": 51.0405315,
+      "lon": 13.7327716,
+      "tags": {
+        "level": "1",
+        "public_transport": "destination_display"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875056,
+      "lat": 51.0405366,
+      "lon": 13.7328127,
+      "tags": {
+        "amenity": "bench",
+        "backrest": "yes",
+        "level": "1",
+        "seats": "8"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875757,
+      "lat": 51.0405463,
+      "lon": 13.7327835,
+      "tags": {
+        "amenity": "clock",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875758,
+      "lat": 51.0405494,
+      "lon": 13.7327745,
+      "tags": {
+        "level": "1",
+        "public_transport": "info_board"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875759,
+      "lat": 51.0405557,
+      "lon": 13.7327555,
+      "tags": {
+        "level": "1",
+        "public_transport": "info_board"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875760,
+      "lat": 51.0405589,
+      "lon": 13.7327954,
+      "tags": {
+        "level": "1",
+        "public_transport": "destination_display"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875761,
+      "lat": 51.040562,
+      "lon": 13.7327366,
+      "tags": {
+        "level": "1",
+        "public_transport": "info_board"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932875762,
+      "lat": 51.0405684,
+      "lon": 13.7327175,
+      "tags": {
+        "level": "1",
+        "vending": "ticket_validator"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951115,
+      "lat": 51.040348,
+      "lon": 13.7327142,
+      "tags": {
+        "level": "1",
+        "vending": "ticket_validator"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951116,
+      "lat": 51.0403521,
+      "lon": 13.7327016,
+      "tags": {
+        "amenity": "waste_basket",
+        "level": "1"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951117,
+      "lat": 51.040367,
+      "lon": 13.7327148,
+      "tags": {
+        "level": "1",
+        "platform_ref": "17",
+        "platform_section_sign_value": "D",
+        "public_transport": "platform_section_sign"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951118,
+      "lat": 51.0403774,
+      "lon": 13.7326243,
+      "tags": {
+        "level": "1",
+        "public_transport": "info_board"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951119,
+      "lat": 51.0403834,
+      "lon": 13.7326058,
+      "tags": {
+        "level": "1",
+        "note": "Wagenstandanzeiger",
+        "public_transport": "info_board"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951120,
+      "lat": 51.0403863,
+      "lon": 13.7326567,
+      "tags": {
+        "destination_display": "only_track",
+        "level": "1",
+        "public_transport": "destination_display"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951121,
+      "lat": 51.0403895,
+      "lon": 13.7325869,
+      "tags": {
+        "level": "1",
+        "public_transport": "info_board"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3932951122,
+      "lat": 51.0403936,
+      "lon": 13.7325745,
+      "tags": {
+        "level": "1",
+        "vending": "ticket_validator"
       }
     },
     {
@@ -222,6 +1898,59 @@
       "tags": {
         "entrance": "yes",
         "indoor": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3935762134,
+      "lat": 51.0412119,
+      "lon": 13.7344274,
+      "tags": {
+        "level": "0",
+        "name": "vodafone",
+        "shop": "mobile_phone"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3937247334,
+      "lat": 51.0407101,
+      "lon": 13.7323785,
+      "tags": {
+        "level": "0",
+        "name": "Ditsch",
+        "shop": "bakery",
+        "start_date": "2015-12"
+      }
+    },
+    {
+      "type": "node",
+      "id": 3937247335,
+      "lat": 51.0399667,
+      "lon": 13.7313798,
+      "tags": {
+        "amenity": "lockers",
+        "description": "Schließfächer",
+        "fee": "yes",
+        "level": "0",
+        "operator": "DB Station&Service AG"
+      }
+    },
+    {
+      "type": "way",
+      "id": 4617286,
+      "nodes": [
+        29283137,
+        29283164,
+        3922442461,
+        3100088736,
+        3922442459,
+        3098294932,
+        3657617857
+      ],
+      "tags": {
+        "foot": "designated",
+        "highway": "footway"
       }
     },
     {
@@ -736,32 +2465,6 @@
     },
     {
       "type": "way",
-      "id": 58962412,
-      "nodes": [
-        520494981,
-        520494982
-      ],
-      "tags": {
-        "highway": "steps",
-        "surface": "concrete",
-        "width": "1"
-      }
-    },
-    {
-      "type": "way",
-      "id": 58962417,
-      "nodes": [
-        730688963,
-        520494988
-      ],
-      "tags": {
-        "highway": "footway",
-        "surface": "paving_stones",
-        "width": "1"
-      }
-    },
-    {
-      "type": "way",
       "id": 59048795,
       "nodes": [
         731978180,
@@ -771,7 +2474,8 @@
         "covered": "yes",
         "escalator": "parallel",
         "highway": "steps",
-        "incline": "down"
+        "incline": "down",
+        "level": "0;1"
       }
     },
     {
@@ -804,6 +2508,7 @@
         "handrail:right": "yes",
         "highway": "steps",
         "incline": "down",
+        "level": "0;1",
         "ramp": "no",
         "step.condition": "even",
         "step.height": "normal",
@@ -867,7 +2572,8 @@
       ],
       "tags": {
         "covered": "yes",
-        "highway": "steps"
+        "highway": "steps",
+        "level": "0;1"
       }
     },
     {
@@ -905,7 +2611,6 @@
         1283001302,
         3934783427,
         3812956734,
-        3934806445,
         2065658771,
         997588692,
         997588415,
@@ -934,6 +2639,7 @@
         "highway": "footway",
         "indoor": "yes",
         "layer": "0",
+        "level": "0",
         "wheelchair": "yes"
       }
     },
@@ -1073,7 +2779,8 @@
       ],
       "tags": {
         "highway": "footway",
-        "indoor": "yes"
+        "indoor": "yes",
+        "level": "0"
       }
     },
     {
@@ -1095,6 +2802,7 @@
       "id": 85945066,
       "nodes": [
         997588692,
+        3937546380,
         3606015354
       ],
       "tags": {
@@ -1121,9 +2829,13 @@
       "id": 91064240,
       "nodes": [
         1057435448,
+        3936829458,
         3606101853,
         2544070698,
+        3936779916,
         3812956750,
+        3936779914,
+        3936779912,
         3934783433,
         1283001302,
         3745974477,
@@ -1137,6 +2849,22 @@
     },
     {
       "type": "way",
+      "id": 105702388,
+      "nodes": [
+        565361527,
+        3098294039,
+        29283163,
+        3508409306,
+        3508409307,
+        3508409308,
+        3564609794
+      ],
+      "tags": {
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
       "id": 108036121,
       "nodes": [
         1240281371,
@@ -1145,7 +2873,23 @@
       "tags": {
         "covered": "yes",
         "highway": "steps",
+        "level": "0;1",
         "step_count": "32"
+      }
+    },
+    {
+      "type": "way",
+      "id": 114716553,
+      "nodes": [
+        1298741718,
+        3244615481,
+        569995379,
+        569995380,
+        569995376
+      ],
+      "tags": {
+        "bicycle": "yes",
+        "highway": "footway"
       }
     },
     {
@@ -1268,20 +3012,6 @@
       ],
       "tags": {
         "highway": "path",
-        "note": "Trampelpfad"
-      }
-    },
-    {
-      "type": "way",
-      "id": 175509118,
-      "nodes": [
-        761364726,
-        3815614800,
-        761364652
-      ],
-      "tags": {
-        "highway": "path",
-        "lit": "no",
         "note": "Trampelpfad"
       }
     },
@@ -1416,6 +3146,19 @@
     },
     {
       "type": "way",
+      "id": 227665265,
+      "nodes": [
+        725613792,
+        725613822
+      ],
+      "tags": {
+        "bicycle": "yes",
+        "highway": "path",
+        "surface": "ground"
+      }
+    },
+    {
+      "type": "way",
       "id": 237967686,
       "nodes": [
         308355778,
@@ -1469,7 +3212,8 @@
       ],
       "tags": {
         "highway": "steps",
-        "indoor": "yes"
+        "indoor": "yes",
+        "level": "0;1"
       }
     },
     {
@@ -1495,7 +3239,8 @@
       "tags": {
         "highway": "footway",
         "indoor": "yes",
-        "layer": "1"
+        "layer": "1",
+        "level": "1"
       }
     },
     {
@@ -1509,7 +3254,8 @@
         "bridge": "yes",
         "highway": "footway",
         "indoor": "yes",
-        "layer": "1"
+        "layer": "1",
+        "level": "1"
       }
     },
     {
@@ -1521,7 +3267,8 @@
       ],
       "tags": {
         "highway": "steps",
-        "indoor": "yes"
+        "indoor": "yes",
+        "level": "0;1"
       }
     },
     {
@@ -1732,6 +3479,17 @@
     },
     {
       "type": "way",
+      "id": 305386296,
+      "nodes": [
+        565361525,
+        544374462
+      ],
+      "tags": {
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
       "id": 318088080,
       "nodes": [
         303366801,
@@ -1829,7 +3587,8 @@
         1639455498
       ],
       "tags": {
-        "highway": "steps"
+        "highway": "steps",
+        "level": "0;1"
       }
     },
     {
@@ -2093,6 +3852,37 @@
     },
     {
       "type": "way",
+      "id": 353415027,
+      "nodes": [
+        3731640236,
+        3591963620,
+        3592597699
+      ],
+      "tags": {
+        "bicycle": "yes",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
+      "id": 353415042,
+      "nodes": [
+        3591963619,
+        3591963617,
+        3591963616,
+        3591963618,
+        3621301981,
+        3591963621,
+        3591963624,
+        3591963626
+      ],
+      "tags": {
+        "bicycle": "yes",
+        "highway": "footway"
+      }
+    },
+    {
+      "type": "way",
       "id": 353476705,
       "nodes": [
         395625060,
@@ -2120,12 +3910,12 @@
       "id": 354954351,
       "nodes": [
         997588415,
-        997588860
+        3936629429
       ],
       "tags": {
         "covered": "yes",
-        "highway": "steps",
-        "incline": "up"
+        "highway": "footway",
+        "level": "0"
       }
     },
     {
@@ -2170,7 +3960,8 @@
       ],
       "tags": {
         "covered": "yes",
-        "highway": "steps"
+        "highway": "steps",
+        "level": "0;1"
       }
     },
     {
@@ -2199,6 +3990,7 @@
       "tags": {
         "covered": "yes",
         "highway": "steps",
+        "level": "0;1",
         "step_count": "32"
       }
     },
@@ -2406,7 +4198,8 @@
       "tags": {
         "covered": "yes",
         "highway": "steps",
-        "incline": "up"
+        "incline": "up",
+        "level": "0;1"
       }
     },
     {
@@ -2418,7 +4211,8 @@
       ],
       "tags": {
         "covered": "yes",
-        "highway": "steps"
+        "highway": "steps",
+        "level": "0;1"
       }
     },
     {
@@ -2432,7 +4226,8 @@
       ],
       "tags": {
         "highway": "footway",
-        "indoor": "yes"
+        "indoor": "yes",
+        "level": "0"
       }
     },
     {
@@ -2517,7 +4312,8 @@
       "tags": {
         "covered": "yes",
         "highway": "footway",
-        "layer": "1"
+        "layer": "1",
+        "level": "1"
       }
     },
     {
@@ -2628,7 +4424,8 @@
       "tags": {
         "covered": "yes",
         "highway": "steps",
-        "incline": "up"
+        "incline": "up",
+        "level": "0;1"
       }
     },
     {
@@ -2641,7 +4438,8 @@
       "tags": {
         "covered": "yes",
         "highway": "steps",
-        "incline": "up"
+        "incline": "up",
+        "level": "0;1"
       }
     },
     {
@@ -2699,6 +4497,11 @@
         2718584629,
         248960563,
         2718584633,
+        3936828832,
+        3936779915,
+        3936828834,
+        3936828836,
+        3936828838,
         3812956754
       ],
       "tags": {
@@ -2734,7 +4537,15 @@
         3812957265,
         3812956756,
         3812956754,
+        3936828840,
+        3936779918,
+        3936828843,
+        3936828845,
+        3936828847,
+        3936828850,
+        3936779919,
         3812957258,
+        3936828853,
         248960382,
         3812957269
       ],
@@ -2817,7 +4628,8 @@
       "tags": {
         "highway": "footway",
         "indoor": "yes",
-        "level": "0"
+        "level": "0",
+        "tactile_paving": "yes"
       }
     },
     {
@@ -3396,6 +5208,9 @@
         3934806778,
         3934806779,
         3934806781,
+        3936828821,
+        3936779911,
+        3936828819,
         3934806780,
         3934806778
       ],
@@ -3441,7 +5256,19 @@
         3934806453,
         3934806451,
         3934806450,
-        3934806445,
+        3937546395,
+        3937546392,
+        3937546390,
+        3937546394,
+        3937546393,
+        3937546388,
+        2065658771,
+        3937546386,
+        3937546391,
+        3937546389,
+        3606015355,
+        3937546384,
+        3937546387,
         3934806443,
         3934806444,
         3934806442,
@@ -3477,6 +5304,11 @@
         3934806771,
         3934806778,
         3934806780,
+        3936828817,
+        3936828815,
+        3936828813,
+        3936779909,
+        3936828811,
         2718584635,
         2718584631,
         248960555,
@@ -3575,6 +5407,249 @@
         "payment:credit_cards": "no",
         "smoking": "no",
         "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390513088,
+      "nodes": [
+        3936629429,
+        997588860
+      ],
+      "tags": {
+        "covered": "yes",
+        "highway": "steps",
+        "incline": "up",
+        "level": "0;1"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390525166,
+      "nodes": [
+        3936779910,
+        3936779908,
+        248960572,
+        248960387,
+        2269071535,
+        3936779917,
+        3936779910
+      ],
+      "tags": {
+        "access": "designated",
+        "amenity": "cafe",
+        "indoor": "room",
+        "internet_access": "wlan",
+        "internet_access:fee": "no",
+        "internet_access:operator": "Deutsche Telekom",
+        "level": "1",
+        "name": "DB Lounge",
+        "opening_hours": "Mo-Fr 07:00-21:00; Sa, Su 08:00-20:00",
+        "operator": "Deutsche Bahn",
+        "wikipedia": "de:DB Lounge"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390525168,
+      "nodes": [
+        3934806771,
+        3936779910,
+        3936779917,
+        3936828829,
+        3936779913,
+        3936828827,
+        3936828825,
+        3936828823,
+        3934806781,
+        3934806779,
+        3934806778,
+        3934806771
+      ],
+      "tags": {
+        "access": "customers",
+        "addr:city": "Dresden",
+        "addr:housenumber": "4",
+        "addr:postcode": "01069",
+        "addr:street": "Wiener Platz",
+        "indoor": "room",
+        "level": "0",
+        "name": "Reisezentrum Dresden Hbf",
+        "opening_hours": "Mo-Fr 05:45-21:00; Sa-Su, PH 07:00-21:00",
+        "operator": "Deutsche Bahn",
+        "shop": "ticket",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390525169,
+      "nodes": [
+        3936779911,
+        3936779914,
+        3936779918
+      ],
+      "tags": {
+        "highway": "footway",
+        "indoor": "yes",
+        "level": "0"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390525171,
+      "nodes": [
+        3936779909,
+        3936779912,
+        3936779915
+      ],
+      "tags": {
+        "highway": "footway",
+        "indoor": "yes",
+        "level": "0"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390525172,
+      "nodes": [
+        3936779913,
+        3936779916,
+        3936779919
+      ],
+      "tags": {
+        "highway": "footway",
+        "indoor": "yes",
+        "level": "0"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390527719,
+      "nodes": [
+        3934783436,
+        3936828831,
+        3936828832,
+        3936779915,
+        3936828834,
+        3936828833,
+        3936828835,
+        3936828836,
+        3936828838,
+        3936828837,
+        3936828839,
+        3936828840,
+        3936779918,
+        3936828843,
+        3936828841,
+        3936828844,
+        3936828845,
+        3936828847,
+        3936828846,
+        3936828848,
+        3936828850,
+        3936779919,
+        3936828853,
+        3936828852,
+        3936829465,
+        3936829466,
+        3936829463,
+        3936829464,
+        3936829462,
+        3936829460,
+        3936829459,
+        3936829461,
+        3936829458,
+        3936829457,
+        3936828855,
+        3936828854,
+        3936828856,
+        3936828851,
+        3936828849,
+        3936828842,
+        3936828830,
+        3936828829,
+        3936779913,
+        3936828827,
+        3936828828,
+        3936828826,
+        3936828825,
+        3936828823,
+        3936828824,
+        3936828822,
+        3936828821,
+        3936779911,
+        3936828819,
+        3936828820,
+        3936828818,
+        3936828817,
+        3936828815,
+        3936828816,
+        3936828814,
+        3936828813,
+        3936779909,
+        3936828811,
+        3936828812,
+        3934783430,
+        3934783433,
+        3934783436
+      ],
+      "tags": {
+        "indoor": "corridor",
+        "level": "0",
+        "name": "Empfangsmittelhalle"
+      }
+    },
+    {
+      "type": "way",
+      "id": 390589565,
+      "nodes": [
+        3937546392,
+        2229520115,
+        3932951110,
+        3937546385,
+        3715805180,
+        3727833196,
+        3727833195,
+        3715805178,
+        3937546373,
+        3937546372,
+        3937546371,
+        3937546368,
+        3937546370,
+        3937546369,
+        3937546367,
+        1274639034,
+        3937546364,
+        3937546366,
+        3937546365,
+        3937546363,
+        3937546360,
+        3937546362,
+        3937546361,
+        3715805176,
+        3937546375,
+        3937546374,
+        3937546376,
+        3937546377,
+        3715805177,
+        3937546379,
+        3937546378,
+        3937546380,
+        3937546381,
+        3937546382,
+        3937546383,
+        3937546384,
+        3606015355,
+        3937546386,
+        2065658771,
+        3937546388,
+        3937546390,
+        3937546392
+      ],
+      "tags": {
+        "indoor": "corridor",
+        "level": "0"
       }
     },
     {
@@ -4115,12 +6190,6 @@
     },
     {
       "type": "node",
-      "id": 730688963,
-      "lat": 51.0384396,
-      "lon": 13.7269582
-    },
-    {
-      "type": "node",
       "id": 730688980,
       "lat": 51.0381675,
       "lon": 13.7273287
@@ -4649,21 +6718,9 @@
     },
     {
       "type": "node",
-      "id": 761364652,
-      "lat": 51.0382097,
-      "lon": 13.733038
-    },
-    {
-      "type": "node",
       "id": 761364676,
       "lat": 51.0381553,
       "lon": 13.7337402
-    },
-    {
-      "type": "node",
-      "id": 761364726,
-      "lat": 51.0380232,
-      "lon": 13.7337684
     },
     {
       "type": "node",
@@ -4823,6 +6880,12 @@
     },
     {
       "type": "node",
+      "id": 725613822,
+      "lat": 51.0423921,
+      "lon": 13.7333371
+    },
+    {
+      "type": "node",
       "id": 761364687,
       "lat": 51.0422698,
       "lon": 13.7328445
@@ -4862,6 +6925,12 @@
       "id": 2466229026,
       "lat": 51.0416059,
       "lon": 13.7300638
+    },
+    {
+      "type": "node",
+      "id": 1298741718,
+      "lat": 51.0405621,
+      "lon": 13.7362968
     },
     {
       "type": "node",
@@ -5012,6 +7081,24 @@
       "id": 3397947277,
       "lat": 51.0396324,
       "lon": 13.7335666
+    },
+    {
+      "type": "node",
+      "id": 3508409306,
+      "lat": 51.0424162,
+      "lon": 13.7363133
+    },
+    {
+      "type": "node",
+      "id": 3508409307,
+      "lat": 51.0424663,
+      "lon": 13.7361859
+    },
+    {
+      "type": "node",
+      "id": 3508409308,
+      "lat": 51.0424869,
+      "lon": 13.7361351
     },
     {
       "type": "node",
@@ -5237,6 +7324,12 @@
     },
     {
       "type": "node",
+      "id": 3564609794,
+      "lat": 51.0425356,
+      "lon": 13.7359956
+    },
+    {
+      "type": "node",
       "id": 3564609798,
       "lat": 51.0418359,
       "lon": 13.7353991
@@ -5345,6 +7438,36 @@
     },
     {
       "type": "node",
+      "id": 3591963616,
+      "lat": 51.0423564,
+      "lon": 13.7318732
+    },
+    {
+      "type": "node",
+      "id": 3591963617,
+      "lat": 51.042359,
+      "lon": 13.7317478
+    },
+    {
+      "type": "node",
+      "id": 3591963618,
+      "lat": 51.0423839,
+      "lon": 13.7319098
+    },
+    {
+      "type": "node",
+      "id": 3591963619,
+      "lat": 51.042391,
+      "lon": 13.7315198
+    },
+    {
+      "type": "node",
+      "id": 3591963621,
+      "lat": 51.0427025,
+      "lon": 13.7320556
+    },
+    {
+      "type": "node",
       "id": 393422342,
       "lat": 51.0422795,
       "lon": 13.7299568
@@ -5384,6 +7507,12 @@
       "id": 3592597694,
       "lat": 51.0418057,
       "lon": 13.732035
+    },
+    {
+      "type": "node",
+      "id": 3592597699,
+      "lat": 51.0424222,
+      "lon": 13.7313908
     },
     {
       "type": "node",
@@ -5468,6 +7597,12 @@
       "id": 3606101864,
       "lat": 51.0405784,
       "lon": 13.7318546
+    },
+    {
+      "type": "node",
+      "id": 3621301981,
+      "lat": 51.0426461,
+      "lon": 13.7320298
     },
     {
       "type": "node",
@@ -5675,6 +7810,12 @@
     },
     {
       "type": "node",
+      "id": 3591963620,
+      "lat": 51.0424743,
+      "lon": 13.7313069
+    },
+    {
+      "type": "node",
       "id": 3731640234,
       "lat": 51.0415107,
       "lon": 13.7303339
@@ -5720,12 +7861,6 @@
       "id": 3768291521,
       "lat": 51.0402086,
       "lon": 13.7332556
-    },
-    {
-      "type": "node",
-      "id": 3768291533,
-      "lat": 51.039672,
-      "lon": 13.7327984
     },
     {
       "type": "node",
@@ -5963,12 +8098,6 @@
     },
     {
       "type": "node",
-      "id": 3812956734,
-      "lat": 51.0398285,
-      "lon": 13.7327236
-    },
-    {
-      "type": "node",
       "id": 3812956735,
       "lat": 51.0398483,
       "lon": 13.7310664
@@ -6020,12 +8149,6 @@
       "id": 3812957272,
       "lat": 51.0404825,
       "lon": 13.7322085
-    },
-    {
-      "type": "node",
-      "id": 3815614800,
-      "lat": 51.0381862,
-      "lon": 13.7331301
     },
     {
       "type": "node",
@@ -6089,12 +8212,6 @@
     },
     {
       "type": "node",
-      "id": 997588692,
-      "lat": 51.0397255,
-      "lon": 13.7326378
-    },
-    {
-      "type": "node",
       "id": 2267016717,
       "lat": 51.0400069,
       "lon": 13.7343742
@@ -6116,12 +8233,6 @@
       "id": 3606015351,
       "lat": 51.039527,
       "lon": 13.7326442
-    },
-    {
-      "type": "node",
-      "id": 3606015354,
-      "lat": 51.0396776,
-      "lon": 13.7327831
     },
     {
       "type": "node",
@@ -6230,6 +8341,18 @@
       "id": 248960382,
       "lat": 51.04026,
       "lon": 13.7322334
+    },
+    {
+      "type": "node",
+      "id": 248960387,
+      "lat": 51.0401369,
+      "lon": 13.732132
+    },
+    {
+      "type": "node",
+      "id": 248960572,
+      "lat": 51.0399579,
+      "lon": 13.7319847
     },
     {
       "type": "node",
@@ -6347,27 +8470,9 @@
     },
     {
       "type": "node",
-      "id": 1274639034,
-      "lat": 51.0394182,
-      "lon": 13.7323814
-    },
-    {
-      "type": "node",
       "id": 1283001302,
       "lat": 51.0399787,
       "lon": 13.7328489
-    },
-    {
-      "type": "node",
-      "id": 2065658771,
-      "lat": 51.0397415,
-      "lon": 13.7326511
-    },
-    {
-      "type": "node",
-      "id": 2269071535,
-      "lat": 51.0400658,
-      "lon": 13.7321324
     },
     {
       "type": "node",
@@ -6701,6 +8806,12 @@
     },
     {
       "type": "node",
+      "id": 3731640236,
+      "lat": 51.042341,
+      "lon": 13.7311544
+    },
+    {
+      "type": "node",
       "id": 3780129358,
       "lat": 51.0409717,
       "lon": 13.7328635
@@ -6788,12 +8899,6 @@
       "id": 3929248187,
       "lat": 51.0407036,
       "lon": 13.7330408
-    },
-    {
-      "type": "node",
-      "id": 3929248189,
-      "lat": 51.0407332,
-      "lon": 13.7330665
     },
     {
       "type": "node",
@@ -7022,12 +9127,6 @@
       "id": 3929716626,
       "lat": 51.0410339,
       "lon": 13.7336766
-    },
-    {
-      "type": "node",
-      "id": 732011056,
-      "lat": 51.0403711,
-      "lon": 13.7333093
     },
     {
       "type": "node",
@@ -7403,33 +9502,9 @@
     },
     {
       "type": "node",
-      "id": 3715805176,
-      "lat": 51.0395344,
-      "lon": 13.7325493
-    },
-    {
-      "type": "node",
-      "id": 3715805177,
-      "lat": 51.0395728,
-      "lon": 13.7325817
-    },
-    {
-      "type": "node",
-      "id": 3715805178,
-      "lat": 51.0395672,
-      "lon": 13.732451
-    },
-    {
-      "type": "node",
       "id": 3715805179,
       "lat": 51.0398568,
       "lon": 13.7315765
-    },
-    {
-      "type": "node",
-      "id": 3715805180,
-      "lat": 51.0396056,
-      "lon": 13.7324834
     },
     {
       "type": "node",
@@ -7448,18 +9523,6 @@
       "id": 3715805184,
       "lat": 51.0399485,
       "lon": 13.731429
-    },
-    {
-      "type": "node",
-      "id": 3727833195,
-      "lat": 51.039583,
-      "lon": 13.7324076
-    },
-    {
-      "type": "node",
-      "id": 3727833196,
-      "lat": 51.0396174,
-      "lon": 13.7324365
     },
     {
       "type": "node",
@@ -7592,18 +9655,6 @@
       "id": 3774316767,
       "lat": 51.03976,
       "lon": 13.732534
-    },
-    {
-      "type": "node",
-      "id": 3932951110,
-      "lat": 51.0397497,
-      "lon": 13.7325213
-    },
-    {
-      "type": "node",
-      "id": 3932951111,
-      "lat": 51.0397743,
-      "lon": 13.7325422
     },
     {
       "type": "node",
@@ -8237,12 +10288,6 @@
     },
     {
       "type": "node",
-      "id": 3934783430,
-      "lat": 51.0399669,
-      "lon": 13.7326823
-    },
-    {
-      "type": "node",
       "id": 3934783431,
       "lat": 51.0399941,
       "lon": 13.7330278
@@ -8252,12 +10297,6 @@
       "id": 3934783432,
       "lat": 51.0400072,
       "lon": 13.7329876
-    },
-    {
-      "type": "node",
-      "id": 3934783433,
-      "lat": 51.0400193,
-      "lon": 13.7327253
     },
     {
       "type": "node",
@@ -8273,213 +10312,15 @@
     },
     {
       "type": "node",
-      "id": 3934783436,
-      "lat": 51.0400764,
-      "lon": 13.7327721
-    },
-    {
-      "type": "node",
       "id": 3934783437,
       "lat": 51.0400886,
       "lon": 13.7328333
     },
     {
       "type": "node",
-      "id": 248960555,
-      "lat": 51.039936,
-      "lon": 13.7326769
-    },
-    {
-      "type": "node",
-      "id": 2718584628,
-      "lat": 51.0398643,
-      "lon": 13.7328981
-    },
-    {
-      "type": "node",
-      "id": 3934783427,
-      "lat": 51.0399012,
-      "lon": 13.7327843
-    },
-    {
-      "type": "node",
-      "id": 3934806442,
-      "lat": 51.03973,
-      "lon": 13.7327576
-    },
-    {
-      "type": "node",
-      "id": 3934806443,
-      "lat": 51.0397359,
-      "lon": 13.7327113
-    },
-    {
-      "type": "node",
-      "id": 3934806444,
-      "lat": 51.0397431,
-      "lon": 13.7327173
-    },
-    {
-      "type": "node",
-      "id": 3934806445,
-      "lat": 51.0397525,
-      "lon": 13.7326603
-    },
-    {
-      "type": "node",
-      "id": 3934806446,
-      "lat": 51.0397534,
-      "lon": 13.7328077
-    },
-    {
-      "type": "node",
-      "id": 3934806447,
-      "lat": 51.0397613,
-      "lon": 13.7327833
-    },
-    {
-      "type": "node",
-      "id": 3934806449,
-      "lat": 51.0397647,
-      "lon": 13.732817
-    },
-    {
-      "type": "node",
-      "id": 3934806450,
-      "lat": 51.0397657,
-      "lon": 13.7326195
-    },
-    {
-      "type": "node",
-      "id": 3934806451,
-      "lat": 51.0397734,
-      "lon": 13.7326258
-    },
-    {
-      "type": "node",
-      "id": 3934806453,
-      "lat": 51.0397868,
-      "lon": 13.7325844
-    },
-    {
-      "type": "node",
-      "id": 3934806454,
-      "lat": 51.0397887,
-      "lon": 13.7328365
-    },
-    {
-      "type": "node",
-      "id": 3934806456,
-      "lat": 51.0397958,
-      "lon": 13.7328423
-    },
-    {
-      "type": "node",
-      "id": 3934806758,
-      "lat": 51.0398176,
-      "lon": 13.7326097
-    },
-    {
-      "type": "node",
-      "id": 3934806759,
-      "lat": 51.0398197,
-      "lon": 13.7328618
-    },
-    {
-      "type": "node",
-      "id": 3934806761,
-      "lat": 51.0398253,
-      "lon": 13.7325858
-    },
-    {
-      "type": "node",
-      "id": 3934806762,
-      "lat": 51.039827,
-      "lon": 13.7328677
-    },
-    {
-      "type": "node",
-      "id": 3934806763,
-      "lat": 51.039837,
-      "lon": 13.7325954
-    },
-    {
-      "type": "node",
-      "id": 3934806764,
-      "lat": 51.0398404,
-      "lon": 13.7325849
-    },
-    {
-      "type": "node",
-      "id": 3934806766,
-      "lat": 51.0398509,
-      "lon": 13.7328871
-    },
-    {
-      "type": "node",
-      "id": 3934806767,
-      "lat": 51.039861,
-      "lon": 13.7326151
-    },
-    {
-      "type": "node",
-      "id": 3934806768,
-      "lat": 51.0398644,
-      "lon": 13.7326046
-    },
-    {
-      "type": "node",
-      "id": 3934806769,
-      "lat": 51.0398682,
-      "lon": 13.732621
-    },
-    {
-      "type": "node",
-      "id": 3934806770,
-      "lat": 51.0398716,
-      "lon": 13.7326104
-    },
-    {
-      "type": "node",
       "id": 3934806771,
       "lat": 51.0398724,
       "lon": 13.7324418
-    },
-    {
-      "type": "node",
-      "id": 3934806772,
-      "lat": 51.039892,
-      "lon": 13.7326406
-    },
-    {
-      "type": "node",
-      "id": 3934806773,
-      "lat": 51.0398954,
-      "lon": 13.7326299
-    },
-    {
-      "type": "node",
-      "id": 3934806774,
-      "lat": 51.0398994,
-      "lon": 13.7326468
-    },
-    {
-      "type": "node",
-      "id": 3934806775,
-      "lat": 51.0399029,
-      "lon": 13.7326361
-    },
-    {
-      "type": "node",
-      "id": 3934806776,
-      "lat": 51.0399229,
-      "lon": 13.7326661
-    },
-    {
-      "type": "node",
-      "id": 3934806777,
-      "lat": 51.0399264,
-      "lon": 13.7326554
     },
     {
       "type": "node",
@@ -8504,42 +10345,6 @@
       "id": 3934806781,
       "lat": 51.0400214,
       "lon": 13.7324871
-    },
-    {
-      "type": "node",
-      "id": 3934806448,
-      "lat": 51.0397613,
-      "lon": 13.7328273
-    },
-    {
-      "type": "node",
-      "id": 3934806452,
-      "lat": 51.0397853,
-      "lon": 13.7328471
-    },
-    {
-      "type": "node",
-      "id": 3934806455,
-      "lat": 51.0397923,
-      "lon": 13.732853
-    },
-    {
-      "type": "node",
-      "id": 3934806757,
-      "lat": 51.0398162,
-      "lon": 13.7328727
-    },
-    {
-      "type": "node",
-      "id": 3934806760,
-      "lat": 51.0398234,
-      "lon": 13.7328787
-    },
-    {
-      "type": "node",
-      "id": 3934806765,
-      "lat": 51.0398472,
-      "lon": 13.7328984
     },
     {
       "type": "node",
@@ -8591,6 +10396,984 @@
     },
     {
       "type": "node",
+      "id": 3936629429,
+      "lat": 51.0395998,
+      "lon": 13.732423
+    },
+    {
+      "type": "node",
+      "id": 732011056,
+      "lat": 51.0403711,
+      "lon": 13.7333093
+    },
+    {
+      "type": "node",
+      "id": 2269071535,
+      "lat": 51.04012,
+      "lon": 13.7321822
+    },
+    {
+      "type": "node",
+      "id": 3936779908,
+      "lat": 51.039937,
+      "lon": 13.7320493
+    },
+    {
+      "type": "node",
+      "id": 3936779910,
+      "lat": 51.0399864,
+      "lon": 13.7320896
+    },
+    {
+      "type": "node",
+      "id": 3936779912,
+      "lat": 51.0400314,
+      "lon": 13.7326886
+    },
+    {
+      "type": "node",
+      "id": 3936779914,
+      "lat": 51.0400715,
+      "lon": 13.7325665
+    },
+    {
+      "type": "node",
+      "id": 3936779916,
+      "lat": 51.040111,
+      "lon": 13.7324467
+    },
+    {
+      "type": "node",
+      "id": 3936779917,
+      "lat": 51.040116,
+      "lon": 13.7321963
+    },
+    {
+      "type": "node",
+      "id": 3934783430,
+      "lat": 51.0399667,
+      "lon": 13.7326823
+    },
+    {
+      "type": "node",
+      "id": 3934783433,
+      "lat": 51.0400193,
+      "lon": 13.7327253
+    },
+    {
+      "type": "node",
+      "id": 3934783436,
+      "lat": 51.0400764,
+      "lon": 13.732772
+    },
+    {
+      "type": "node",
+      "id": 3936779909,
+      "lat": 51.0399721,
+      "lon": 13.7326387
+    },
+    {
+      "type": "node",
+      "id": 3936779911,
+      "lat": 51.0400117,
+      "lon": 13.7325169
+    },
+    {
+      "type": "node",
+      "id": 3936779913,
+      "lat": 51.0400509,
+      "lon": 13.7323963
+    },
+    {
+      "type": "node",
+      "id": 3936779915,
+      "lat": 51.0400953,
+      "lon": 13.732742
+    },
+    {
+      "type": "node",
+      "id": 3936779918,
+      "lat": 51.0401354,
+      "lon": 13.732618
+    },
+    {
+      "type": "node",
+      "id": 3936779919,
+      "lat": 51.0401742,
+      "lon": 13.7324973
+    },
+    {
+      "type": "node",
+      "id": 3936828811,
+      "lat": 51.0399658,
+      "lon": 13.732658
+    },
+    {
+      "type": "node",
+      "id": 3936828812,
+      "lat": 51.0399727,
+      "lon": 13.7326637
+    },
+    {
+      "type": "node",
+      "id": 3936828813,
+      "lat": 51.0399782,
+      "lon": 13.7326199
+    },
+    {
+      "type": "node",
+      "id": 3936828814,
+      "lat": 51.0399851,
+      "lon": 13.7326255
+    },
+    {
+      "type": "node",
+      "id": 3936828815,
+      "lat": 51.0399855,
+      "lon": 13.7325974
+    },
+    {
+      "type": "node",
+      "id": 3936828816,
+      "lat": 51.0399923,
+      "lon": 13.732603
+    },
+    {
+      "type": "node",
+      "id": 3936828817,
+      "lat": 51.0399979,
+      "lon": 13.7325592
+    },
+    {
+      "type": "node",
+      "id": 3936828818,
+      "lat": 51.0400047,
+      "lon": 13.7325648
+    },
+    {
+      "type": "node",
+      "id": 3936828819,
+      "lat": 51.0400056,
+      "lon": 13.7325357
+    },
+    {
+      "type": "node",
+      "id": 3936828820,
+      "lat": 51.0400124,
+      "lon": 13.7325412
+    },
+    {
+      "type": "node",
+      "id": 3936828821,
+      "lat": 51.040018,
+      "lon": 13.7324976
+    },
+    {
+      "type": "node",
+      "id": 3936828822,
+      "lat": 51.0400247,
+      "lon": 13.7325031
+    },
+    {
+      "type": "node",
+      "id": 3936828823,
+      "lat": 51.0400255,
+      "lon": 13.7324746
+    },
+    {
+      "type": "node",
+      "id": 3936828824,
+      "lat": 51.0400322,
+      "lon": 13.73248
+    },
+    {
+      "type": "node",
+      "id": 3936828825,
+      "lat": 51.0400379,
+      "lon": 13.7324364
+    },
+    {
+      "type": "node",
+      "id": 3936828826,
+      "lat": 51.0400447,
+      "lon": 13.732442
+    },
+    {
+      "type": "node",
+      "id": 3936828827,
+      "lat": 51.0400452,
+      "lon": 13.7324141
+    },
+    {
+      "type": "node",
+      "id": 3936828828,
+      "lat": 51.0400519,
+      "lon": 13.7324196
+    },
+    {
+      "type": "node",
+      "id": 3936828829,
+      "lat": 51.0400576,
+      "lon": 13.7323757
+    },
+    {
+      "type": "node",
+      "id": 3936828830,
+      "lat": 51.0400645,
+      "lon": 13.7323813
+    },
+    {
+      "type": "node",
+      "id": 3936828831,
+      "lat": 51.0400822,
+      "lon": 13.732754
+    },
+    {
+      "type": "node",
+      "id": 3936828832,
+      "lat": 51.0400894,
+      "lon": 13.73276
+    },
+    {
+      "type": "node",
+      "id": 3936828833,
+      "lat": 51.0400946,
+      "lon": 13.7327158
+    },
+    {
+      "type": "node",
+      "id": 3936828834,
+      "lat": 51.0401018,
+      "lon": 13.7327217
+    },
+    {
+      "type": "node",
+      "id": 3936828835,
+      "lat": 51.040102,
+      "lon": 13.732693
+    },
+    {
+      "type": "node",
+      "id": 3936828836,
+      "lat": 51.0401093,
+      "lon": 13.7326989
+    },
+    {
+      "type": "node",
+      "id": 3936828837,
+      "lat": 51.0401146,
+      "lon": 13.7326552
+    },
+    {
+      "type": "node",
+      "id": 3936828838,
+      "lat": 51.0401216,
+      "lon": 13.7326609
+    },
+    {
+      "type": "node",
+      "id": 3936828839,
+      "lat": 51.0401223,
+      "lon": 13.7326313
+    },
+    {
+      "type": "node",
+      "id": 3936828840,
+      "lat": 51.0401293,
+      "lon": 13.732637
+    },
+    {
+      "type": "node",
+      "id": 3936828841,
+      "lat": 51.0401347,
+      "lon": 13.7325934
+    },
+    {
+      "type": "node",
+      "id": 3936828842,
+      "lat": 51.04014,
+      "lon": 13.7321477
+    },
+    {
+      "type": "node",
+      "id": 3936828843,
+      "lat": 51.0401415,
+      "lon": 13.732599
+    },
+    {
+      "type": "node",
+      "id": 3936828844,
+      "lat": 51.0401421,
+      "lon": 13.7325704
+    },
+    {
+      "type": "node",
+      "id": 3936828845,
+      "lat": 51.0401489,
+      "lon": 13.732576
+    },
+    {
+      "type": "node",
+      "id": 3936828846,
+      "lat": 51.0401546,
+      "lon": 13.7325323
+    },
+    {
+      "type": "node",
+      "id": 3936828847,
+      "lat": 51.0401612,
+      "lon": 13.7325378
+    },
+    {
+      "type": "node",
+      "id": 3936828848,
+      "lat": 51.0401619,
+      "lon": 13.7325096
+    },
+    {
+      "type": "node",
+      "id": 3936828849,
+      "lat": 51.0401669,
+      "lon": 13.7321697
+    },
+    {
+      "type": "node",
+      "id": 3936828850,
+      "lat": 51.0401685,
+      "lon": 13.732515
+    },
+    {
+      "type": "node",
+      "id": 3936828851,
+      "lat": 51.0401742,
+      "lon": 13.7321472
+    },
+    {
+      "type": "node",
+      "id": 3936828852,
+      "lat": 51.0401742,
+      "lon": 13.7324713
+    },
+    {
+      "type": "node",
+      "id": 3936828853,
+      "lat": 51.0401809,
+      "lon": 13.7324767
+    },
+    {
+      "type": "node",
+      "id": 3936828854,
+      "lat": 51.040181,
+      "lon": 13.7321818
+    },
+    {
+      "type": "node",
+      "id": 3936828855,
+      "lat": 51.0401854,
+      "lon": 13.7321854
+    },
+    {
+      "type": "node",
+      "id": 3936828856,
+      "lat": 51.0401885,
+      "lon": 13.7321589
+    },
+    {
+      "type": "node",
+      "id": 3936829457,
+      "lat": 51.0401928,
+      "lon": 13.7321626
+    },
+    {
+      "type": "node",
+      "id": 3936829458,
+      "lat": 51.0402013,
+      "lon": 13.7321695
+    },
+    {
+      "type": "node",
+      "id": 3936829459,
+      "lat": 51.0402047,
+      "lon": 13.7322013
+    },
+    {
+      "type": "node",
+      "id": 3936829460,
+      "lat": 51.0402096,
+      "lon": 13.7322053
+    },
+    {
+      "type": "node",
+      "id": 3936829461,
+      "lat": 51.0402121,
+      "lon": 13.7321784
+    },
+    {
+      "type": "node",
+      "id": 3936829462,
+      "lat": 51.0402169,
+      "lon": 13.7321826
+    },
+    {
+      "type": "node",
+      "id": 3936829463,
+      "lat": 51.040224,
+      "lon": 13.7322172
+    },
+    {
+      "type": "node",
+      "id": 3936829464,
+      "lat": 51.0402313,
+      "lon": 13.7321943
+    },
+    {
+      "type": "node",
+      "id": 3936829465,
+      "lat": 51.0402324,
+      "lon": 13.7322915
+    },
+    {
+      "type": "node",
+      "id": 3936829466,
+      "lat": 51.0402497,
+      "lon": 13.7322382
+    },
+    {
+      "type": "node",
+      "id": 248960555,
+      "lat": 51.0399363,
+      "lon": 13.7326771
+    },
+    {
+      "type": "node",
+      "id": 997588692,
+      "lat": 51.0397268,
+      "lon": 13.7326437
+    },
+    {
+      "type": "node",
+      "id": 1274639034,
+      "lat": 51.0394181,
+      "lon": 13.7323814
+    },
+    {
+      "type": "node",
+      "id": 2065658771,
+      "lat": 51.0397399,
+      "lon": 13.732655
+    },
+    {
+      "type": "node",
+      "id": 2229520115,
+      "lat": 51.0397763,
+      "lon": 13.7325444
+    },
+    {
+      "type": "node",
+      "id": 2718584628,
+      "lat": 51.0398644,
+      "lon": 13.7328982
+    },
+    {
+      "type": "node",
+      "id": 3606015354,
+      "lat": 51.0396961,
+      "lon": 13.7327395
+    },
+    {
+      "type": "node",
+      "id": 3606015355,
+      "lat": 51.0397337,
+      "lon": 13.7326741
+    },
+    {
+      "type": "node",
+      "id": 3715805176,
+      "lat": 51.0395358,
+      "lon": 13.732551
+    },
+    {
+      "type": "node",
+      "id": 3715805177,
+      "lat": 51.0395715,
+      "lon": 13.7325802
+    },
+    {
+      "type": "node",
+      "id": 3715805178,
+      "lat": 51.0395684,
+      "lon": 13.7324524
+    },
+    {
+      "type": "node",
+      "id": 3715805180,
+      "lat": 51.0396032,
+      "lon": 13.7324806
+    },
+    {
+      "type": "node",
+      "id": 3727833195,
+      "lat": 51.0395831,
+      "lon": 13.7324078
+    },
+    {
+      "type": "node",
+      "id": 3727833196,
+      "lat": 51.0396177,
+      "lon": 13.7324366
+    },
+    {
+      "type": "node",
+      "id": 3768291533,
+      "lat": 51.0396765,
+      "lon": 13.7328003
+    },
+    {
+      "type": "node",
+      "id": 3812956734,
+      "lat": 51.0398277,
+      "lon": 13.732727
+    },
+    {
+      "type": "node",
+      "id": 3929248189,
+      "lat": 51.0407332,
+      "lon": 13.7330665
+    },
+    {
+      "type": "node",
+      "id": 3932951110,
+      "lat": 51.0397494,
+      "lon": 13.7325222
+    },
+    {
+      "type": "node",
+      "id": 3934783427,
+      "lat": 51.0399006,
+      "lon": 13.7327869
+    },
+    {
+      "type": "node",
+      "id": 3934806442,
+      "lat": 51.03973,
+      "lon": 13.7327576
+    },
+    {
+      "type": "node",
+      "id": 3934806443,
+      "lat": 51.0397359,
+      "lon": 13.7327113
+    },
+    {
+      "type": "node",
+      "id": 3934806444,
+      "lat": 51.0397432,
+      "lon": 13.7327173
+    },
+    {
+      "type": "node",
+      "id": 3934806446,
+      "lat": 51.0397533,
+      "lon": 13.7328077
+    },
+    {
+      "type": "node",
+      "id": 3934806447,
+      "lat": 51.0397613,
+      "lon": 13.7327833
+    },
+    {
+      "type": "node",
+      "id": 3934806448,
+      "lat": 51.0397613,
+      "lon": 13.7328273
+    },
+    {
+      "type": "node",
+      "id": 3934806449,
+      "lat": 51.0397647,
+      "lon": 13.732817
+    },
+    {
+      "type": "node",
+      "id": 3934806450,
+      "lat": 51.0397657,
+      "lon": 13.7326194
+    },
+    {
+      "type": "node",
+      "id": 3934806451,
+      "lat": 51.0397734,
+      "lon": 13.7326258
+    },
+    {
+      "type": "node",
+      "id": 3934806452,
+      "lat": 51.0397853,
+      "lon": 13.7328471
+    },
+    {
+      "type": "node",
+      "id": 3934806453,
+      "lat": 51.0397868,
+      "lon": 13.7325844
+    },
+    {
+      "type": "node",
+      "id": 3934806454,
+      "lat": 51.0397887,
+      "lon": 13.7328365
+    },
+    {
+      "type": "node",
+      "id": 3934806455,
+      "lat": 51.0397923,
+      "lon": 13.732853
+    },
+    {
+      "type": "node",
+      "id": 3934806456,
+      "lat": 51.0397958,
+      "lon": 13.7328423
+    },
+    {
+      "type": "node",
+      "id": 3934806757,
+      "lat": 51.0398162,
+      "lon": 13.7328727
+    },
+    {
+      "type": "node",
+      "id": 3934806758,
+      "lat": 51.0398176,
+      "lon": 13.7326097
+    },
+    {
+      "type": "node",
+      "id": 3934806759,
+      "lat": 51.0398197,
+      "lon": 13.7328618
+    },
+    {
+      "type": "node",
+      "id": 3934806760,
+      "lat": 51.0398234,
+      "lon": 13.7328788
+    },
+    {
+      "type": "node",
+      "id": 3934806761,
+      "lat": 51.0398254,
+      "lon": 13.7325858
+    },
+    {
+      "type": "node",
+      "id": 3934806762,
+      "lat": 51.039827,
+      "lon": 13.7328677
+    },
+    {
+      "type": "node",
+      "id": 3934806763,
+      "lat": 51.039837,
+      "lon": 13.7325954
+    },
+    {
+      "type": "node",
+      "id": 3934806764,
+      "lat": 51.0398404,
+      "lon": 13.7325849
+    },
+    {
+      "type": "node",
+      "id": 3934806765,
+      "lat": 51.0398472,
+      "lon": 13.7328984
+    },
+    {
+      "type": "node",
+      "id": 3934806766,
+      "lat": 51.0398509,
+      "lon": 13.7328871
+    },
+    {
+      "type": "node",
+      "id": 3934806767,
+      "lat": 51.039861,
+      "lon": 13.7326151
+    },
+    {
+      "type": "node",
+      "id": 3934806768,
+      "lat": 51.0398644,
+      "lon": 13.7326046
+    },
+    {
+      "type": "node",
+      "id": 3934806769,
+      "lat": 51.0398682,
+      "lon": 13.732621
+    },
+    {
+      "type": "node",
+      "id": 3934806770,
+      "lat": 51.0398716,
+      "lon": 13.7326104
+    },
+    {
+      "type": "node",
+      "id": 3934806772,
+      "lat": 51.039892,
+      "lon": 13.7326406
+    },
+    {
+      "type": "node",
+      "id": 3934806773,
+      "lat": 51.0398954,
+      "lon": 13.73263
+    },
+    {
+      "type": "node",
+      "id": 3934806774,
+      "lat": 51.0398994,
+      "lon": 13.7326468
+    },
+    {
+      "type": "node",
+      "id": 3934806775,
+      "lat": 51.0399029,
+      "lon": 13.7326361
+    },
+    {
+      "type": "node",
+      "id": 3934806776,
+      "lat": 51.0399229,
+      "lon": 13.7326661
+    },
+    {
+      "type": "node",
+      "id": 3934806777,
+      "lat": 51.0399263,
+      "lon": 13.7326554
+    },
+    {
+      "type": "node",
+      "id": 3937546360,
+      "lat": 51.0394013,
+      "lon": 13.7324316
+    },
+    {
+      "type": "node",
+      "id": 3937546361,
+      "lat": 51.039404,
+      "lon": 13.7324416
+    },
+    {
+      "type": "node",
+      "id": 3937546362,
+      "lat": 51.039406,
+      "lon": 13.7324355
+    },
+    {
+      "type": "node",
+      "id": 3937546363,
+      "lat": 51.0394087,
+      "lon": 13.732409
+    },
+    {
+      "type": "node",
+      "id": 3937546364,
+      "lat": 51.0394114,
+      "lon": 13.7324018
+    },
+    {
+      "type": "node",
+      "id": 3937546365,
+      "lat": 51.0394133,
+      "lon": 13.7324128
+    },
+    {
+      "type": "node",
+      "id": 3937546366,
+      "lat": 51.0394157,
+      "lon": 13.7324054
+    },
+    {
+      "type": "node",
+      "id": 3937546367,
+      "lat": 51.0394199,
+      "lon": 13.7323759
+    },
+    {
+      "type": "node",
+      "id": 3937546368,
+      "lat": 51.0394223,
+      "lon": 13.732369
+    },
+    {
+      "type": "node",
+      "id": 3937546369,
+      "lat": 51.0394246,
+      "lon": 13.7323798
+    },
+    {
+      "type": "node",
+      "id": 3937546370,
+      "lat": 51.0394269,
+      "lon": 13.7323728
+    },
+    {
+      "type": "node",
+      "id": 3937546371,
+      "lat": 51.0394296,
+      "lon": 13.7323468
+    },
+    {
+      "type": "node",
+      "id": 3937546372,
+      "lat": 51.0394342,
+      "lon": 13.7323506
+    },
+    {
+      "type": "node",
+      "id": 3937546373,
+      "lat": 51.0394367,
+      "lon": 13.732343
+    },
+    {
+      "type": "node",
+      "id": 3937546374,
+      "lat": 51.039531,
+      "lon": 13.7325892
+    },
+    {
+      "type": "node",
+      "id": 3937546375,
+      "lat": 51.0395419,
+      "lon": 13.732556
+    },
+    {
+      "type": "node",
+      "id": 3937546376,
+      "lat": 51.0395518,
+      "lon": 13.7326064
+    },
+    {
+      "type": "node",
+      "id": 3937546377,
+      "lat": 51.0395628,
+      "lon": 13.7325729
+    },
+    {
+      "type": "node",
+      "id": 3937546378,
+      "lat": 51.0396921,
+      "lon": 13.7327123
+    },
+    {
+      "type": "node",
+      "id": 3937546379,
+      "lat": 51.0397003,
+      "lon": 13.7326872
+    },
+    {
+      "type": "node",
+      "id": 3937546380,
+      "lat": 51.0397021,
+      "lon": 13.7327206
+    },
+    {
+      "type": "node",
+      "id": 3937546381,
+      "lat": 51.0397118,
+      "lon": 13.7327287
+    },
+    {
+      "type": "node",
+      "id": 3937546382,
+      "lat": 51.0397202,
+      "lon": 13.7327032
+    },
+    {
+      "type": "node",
+      "id": 3937546383,
+      "lat": 51.0397233,
+      "lon": 13.7327058
+    },
+    {
+      "type": "node",
+      "id": 3937546384,
+      "lat": 51.039727,
+      "lon": 13.7326944
+    },
+    {
+      "type": "node",
+      "id": 3937546385,
+      "lat": 51.0397288,
+      "lon": 13.7325849
+    },
+    {
+      "type": "node",
+      "id": 3937546386,
+      "lat": 51.0397362,
+      "lon": 13.7326663
+    },
+    {
+      "type": "node",
+      "id": 3937546387,
+      "lat": 51.0397384,
+      "lon": 13.7327037
+    },
+    {
+      "type": "node",
+      "id": 3937546388,
+      "lat": 51.0397429,
+      "lon": 13.7326459
+    },
+    {
+      "type": "node",
+      "id": 3937546389,
+      "lat": 51.0397449,
+      "lon": 13.7326834
+    },
+    {
+      "type": "node",
+      "id": 3937546390,
+      "lat": 51.0397454,
+      "lon": 13.7326385
+    },
+    {
+      "type": "node",
+      "id": 3937546391,
+      "lat": 51.0397475,
+      "lon": 13.7326756
+    },
+    {
+      "type": "node",
+      "id": 3937546392,
+      "lat": 51.0397521,
+      "lon": 13.7326179
+    },
+    {
+      "type": "node",
+      "id": 3937546393,
+      "lat": 51.0397541,
+      "lon": 13.7326551
+    },
+    {
+      "type": "node",
+      "id": 3937546394,
+      "lat": 51.0397565,
+      "lon": 13.7326477
+    },
+    {
+      "type": "node",
+      "id": 3937546395,
+      "lat": 51.0397632,
+      "lon": 13.732627
+    },
+    {
+      "type": "node",
       "id": 1699578146,
       "lat": 51.0430657,
       "lon": 13.7279665
@@ -8615,6 +11398,24 @@
     },
     {
       "type": "node",
+      "id": 3591963624,
+      "lat": 51.0427742,
+      "lon": 13.7320883
+    },
+    {
+      "type": "node",
+      "id": 3591963626,
+      "lat": 51.0427892,
+      "lon": 13.732044
+    },
+    {
+      "type": "node",
+      "id": 29283137,
+      "lat": 51.0414037,
+      "lon": 13.7376922
+    },
+    {
+      "type": "node",
       "id": 29283138,
       "lat": 51.0421383,
       "lon": 13.7368037
@@ -8624,6 +11425,24 @@
       "id": 403315366,
       "lat": 51.0394503,
       "lon": 13.7382467
+    },
+    {
+      "type": "node",
+      "id": 565361527,
+      "lat": 51.0422601,
+      "lon": 13.7366091
+    },
+    {
+      "type": "node",
+      "id": 569995379,
+      "lat": 51.040173,
+      "lon": 13.7376198
+    },
+    {
+      "type": "node",
+      "id": 569995380,
+      "lat": 51.0398126,
+      "lon": 13.7380235
     },
     {
       "type": "node",
@@ -8648,6 +11467,18 @@
       "id": 569995374,
       "lat": 51.0396125,
       "lon": 13.7377592
+    },
+    {
+      "type": "node",
+      "id": 3244615481,
+      "lat": 51.0402623,
+      "lon": 13.7375185
+    },
+    {
+      "type": "node",
+      "id": 29283163,
+      "lat": 51.0423499,
+      "lon": 13.7364562
     },
     {
       "type": "node",
@@ -8687,6 +11518,12 @@
     },
     {
       "type": "node",
+      "id": 29283164,
+      "lat": 51.0413987,
+      "lon": 13.737589
+    },
+    {
+      "type": "node",
       "id": 544374460,
       "lat": 51.0415123,
       "lon": 13.7371371
@@ -8699,9 +11536,39 @@
     },
     {
       "type": "node",
+      "id": 3098294932,
+      "lat": 51.0412962,
+      "lon": 13.7365923
+    },
+    {
+      "type": "node",
+      "id": 3100088736,
+      "lat": 51.0414091,
+      "lon": 13.7372314
+    },
+    {
+      "type": "node",
+      "id": 3657617857,
+      "lat": 51.0412807,
+      "lon": 13.7365047
+    },
+    {
+      "type": "node",
+      "id": 3922442459,
+      "lat": 51.0413941,
+      "lon": 13.7370865
+    },
+    {
+      "type": "node",
       "id": 3922442461,
       "lat": 51.0414417,
       "lon": 13.737353
+    },
+    {
+      "type": "node",
+      "id": 569995376,
+      "lat": 51.0395388,
+      "lon": 13.7383691
     },
     {
       "type": "node",
@@ -8923,11 +11790,12 @@
         3629630671,
         2718722310,
         692162425,
-        3932951111,
+        2229520115,
         3932951110,
         3932951112,
         3768291530,
         3932951113,
+        3936779908,
         3817701183,
         3861743560,
         248960573,
@@ -9148,6 +12016,8 @@
         3715805180,
         3715805178,
         3715805176,
+        3937546375,
+        3937546377,
         3715805177
       ]
     },

@@ -25,17 +25,27 @@ module t {
 			}).addTo(this.__map);
 
 			this.loadStyle().then(() => this.load()); //First load Style, then load the mapdata
+
+			this.__map.on('zoomend', () => {
+				this.load();
+			});
 			
 		}
 
-		load(): void
+		load(): JQueryXHR
 		{
-			$.getJSON('./data/dresden_hbf.json', (json) => {
-				console.log("--", json)
+			let xhr = $.getJSON('./data/dresden_hbf.json', (json) => {
 				let geojson = osmtogeojson(json, {
 					flatProperties: true,
 					polygonFeatures: () => true //all closed lines are polygons
 				});
+
+				this.__map.eachLayer((layer: any) => {
+					if (!(layer instanceof L.TileLayer)) {
+						this.__map.removeLayer(layer);
+					}
+				});
+
 				L.geoJson(geojson, {
 					//smoothFactor: 0, //don't Simplify Lines
 					filter: (feature) => this._layerFilter(feature), //`() =>` to keep scope
@@ -45,6 +55,7 @@ module t {
 					}
 				}).addTo(this.__map);
 			});
+			return xhr;
 		}
 
 		loadStyle(): JQueryXHR
@@ -100,14 +111,30 @@ module t {
 				levels.forEach((level, index) => {
 					levels[index] = <any>parseInt(level, 10);
 				});
-				console.log(levels);
 				return levels;
 			}
 		}
 
 		createsStyledMarker(feature: any, latlng: L.LatLng): any
 		{
+			let icon = styleParser.getIconForProperties(feature, this._style, this.__map.getZoom());
+			if (icon)
+			{
+				return new L.Marker(latlng, { icon: icon });
+			}
 			return new L.Marker(latlng);
+		}
+
+		initLevelButtons(): void
+		{
+			let levelContainer = $('#level');
+		}
+
+		switchLevel(level: number)
+		{
+			this._level = level;
+			//TODO clear all styles
+			this.load();
 		}
 
 		/**

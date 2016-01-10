@@ -2261,6 +2261,9 @@ declare namespace L {
           */
         addLayer(layer: ILayer, insertAtTheBottom?: boolean): Map;
 
+        /*TODO*/
+        eachLayer(fn: (layer: ILayer) => void, context?: any): any;
+
         /**
           * Removes the given layer from the map.
           */
