@@ -5,13 +5,14 @@ var t;
             var _this = this;
             this.initMap();
             $('#simulatebutton').on('click', function () { return _this.simulateBrokenLift(); });
+            $("#wheelchairtoggle").on('click', function () { return _this.toggleWheelChair(); });
         }
         mapForm.prototype.initMap = function () {
             var _this = this;
             this._level = 0;
             this.__map = new L.Map('map', {});
             this.__map.setView([51.04022, 13.73245], 19);
-            this._isWheelchairstyleActive = true;
+            this._isWheelchairstyleActive = false;
             L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.streets-basic/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidWJhaG52ZXJsZWloIiwiYSI6IjZyVGcyZzAifQ.EP3L8P8zlHIRF7-pB7zfDA', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
                 maxZoom: 22
@@ -22,7 +23,7 @@ var t;
                 .then(function () { return _this.load(); })
                 .then(function () { return _this.loadDbElevators(); });
             this.__map.on('zoomend', function () {
-                if (_this._lastZoomLevel && _this.__map.getZoom() > _this._lastZoomLevel) {
+                if (_this._lastZoomLevel && ((_this._lastZoomLevel >= 17) && (_this.__map.getZoom() > _this._lastZoomLevel))) {
                     _this.load(true);
                 }
                 else {
@@ -30,11 +31,20 @@ var t;
                 }
                 _this._lastZoomLevel = _this.__map.getZoom();
             });
+            this.__map.on('moveend', function (e) {
+                console.log(e.hard);
+                if (e.hard === false) {
+                }
+                else {
+                    console.log('load');
+                    _this.load();
+                }
+            });
         };
         mapForm.prototype.load = function (resueData) {
             var _this = this;
             resueData = resueData ? resueData : false;
-            if ((resueData && this._jsonData) || (this.__map.getZoom() < 18)) {
+            if ((resueData && this._jsonData) || (this.__map.getZoom() < 17)) {
                 this.render(this._jsonData);
                 var deferred = $.Deferred();
                 deferred.resolve(this._jsonData);
@@ -210,18 +220,21 @@ var t;
             }
         };
         mapForm.prototype.loadFromOverpass = function () {
+            var _this = this;
+            this.loadindicator(1);
             var bounds = this.__map.getBounds();
-            var bboxxtring = bounds.getSouth() + ","
-                + bounds.getWest() + ","
-                + bounds.getNorth() + ","
-                + bounds.getEast();
+            var bboxxtring = (bounds.getSouth() - 0.0005) + ","
+                + (bounds.getWest() - 0.0005) + ","
+                + (bounds.getNorth() + 0.0005) + ","
+                + (bounds.getEast() + 0.0005);
             var overpassQuery = "\n\t\t\t\t[out:json][timeout:25]; \n\t\t\t\t( \n\t\t\t\t// query part for: \u201Cindoor=*\u201D \n\t\t\t\tnode[\"indoor\"]({{bbox}}); \n\t\t\t\tway[\"indoor\"]({{bbox}}); \n\t\t\t\trelation[\"indoor\"]({{bbox}}); \n\t\t\t\tway[\"railway\" = \"platform\"]({{bbox}}); \n\t\t\t\tway[\"highway\" = \"platform\"]({{bbox}}); \n\t\t\t\trelation[\"railway\" = \"platform\"]({{bbox}}); \n\t\t\t\tnode[\"room\"]({{bbox}}); \n\t\t\t\tway[\"room\"]({{bbox}}); \n\t\t\t\trelation[\"room\"]({{bbox}}); \n\t\t\t\tnode[\"highway\" = \"elevator\"]({{bbox}}); \n\t\t\t\tnode[\"level\"]({{bbox}}); \n\t\t\t\tway[\"highway\"~\"footway|elevator|steps|path\"]({{bbox}}); \n\t\t\t\t); \n\t\t\t\t// print results \n\t\t\t\tout body; \n\t\t\t\t>; \n\t\t\t\tout skel qt;";
             overpassQuery = overpassQuery.replace(/{{bbox}}/g, bboxxtring);
-            console.log(overpassQuery);
             var apiUrl = "http://overpass.osm.rambler.ru/cgi/interpreter?data=";
             var url = apiUrl + encodeURI(overpassQuery);
             var request = $.getJSON(url, function (result) {
-                console.log(result);
+            });
+            request.always(function () {
+                _this.loadindicator(-1);
             });
             return request;
         };
@@ -232,6 +245,32 @@ var t;
         mapForm.prototype.deactivateWheelchairStyle = function () {
             this._isWheelchairstyleActive = false;
             this.load(true);
+        };
+        mapForm.prototype.toggleWheelChair = function () {
+            var button = $("#wheelchairtoggle");
+            if (this._isWheelchairstyleActive) {
+                this.deactivateWheelchairStyle();
+                button.removeClass('pressed');
+            }
+            else {
+                this.activateWheelchairStyle();
+                button.addClass('pressed');
+            }
+        };
+        mapForm.prototype.loadindicator = function (n) {
+            if (!this._activeLoads) {
+                this._activeLoads = 0;
+            }
+            this._activeLoads = this._activeLoads + n;
+            if (this._activeLoads < 0) {
+                this._activeLoads = 0;
+            }
+            if (this._activeLoads == 0) {
+                $("#loading").hide();
+            }
+            if (this._activeLoads > 0) {
+                $("#loading").show();
+            }
         };
         return mapForm;
     })();

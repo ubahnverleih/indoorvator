@@ -131,6 +131,54 @@
 				padding-left: 6px;
 				padding-right: 6px;
 			}
+
+			#wheelchairtoggle
+			{
+				position: absolute;
+				bottom: 30px;
+				left: 10px;
+				background: rgba(255,255,255,0.6);
+				border-radius: 5px;
+				padding: 5px;
+			}
+
+			#wheelchairtoggle > div
+			{
+				border-radius: 2px;
+				background: #FFF;
+				cursor: pointer;
+				text-align: center;
+				line-height: 40px;
+				font-size: 20px;
+				font-family: sans-serif;
+				padding-left: 6px;
+				padding-right: 6px;
+			}
+
+			#wheelchairtoggle.pressed > div
+			{
+				background-color: #737373;
+				color: white;
+			}
+
+			#loading
+			{
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				padding: 5px;
+				background-color: rgba(255,255,255,0.6);
+				border-radius: 5px;
+			}
+			#loading > div
+			{
+				background-color: white;
+				background-image: url('./img/ajax-loader.gif');
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				width: 40px;
+				height: 40px;
+			}
 			
 		</style>
 	</head>
@@ -139,6 +187,12 @@
 		<div id="level"></div>
 		<div id="simulatebutton">
 			<div>Kaputten Aufzug Simulieren</div>
+		</div>
+		<div id="wheelchairtoggle">
+			<div>Wheelchair</div>
+		</div>
+		<div id="loading">
+			<div></div>
 		</div>
 	</body>
 </html>

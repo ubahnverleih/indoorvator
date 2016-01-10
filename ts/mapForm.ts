@@ -9,6 +9,7 @@ module t {
 			this.initMap();
 
 			$('#simulatebutton').on('click', () => this.simulateBrokenLift());
+			$("#wheelchairtoggle").on('click', () => this.toggleWheelChair());
 			
 		}
 
@@ -17,7 +18,7 @@ module t {
 			this._level = 0;
 			this.__map = new L.Map('map', {});
 			this.__map.setView([51.04022, 13.73245], 19);
-			this._isWheelchairstyleActive = true;
+			this._isWheelchairstyleActive = false;
 			/*L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
 				maxZoom: 22
@@ -37,13 +38,27 @@ module t {
 
 			//reload/rerender on zoom
 			this.__map.on('zoomend', () => {
-				if (this._lastZoomLevel && this.__map.getZoom() > this._lastZoomLevel) {
+				if (this._lastZoomLevel && ((this._lastZoomLevel >= 17) && (this.__map.getZoom() > this._lastZoomLevel))) {
 					this.load(true);
 				}
 				else {
 					this.load();
 				}
 				this._lastZoomLevel = this.__map.getZoom()
+			});
+
+			this.__map.on('moveend', (e: any) => {
+				
+				console.log(e.hard);
+				if (e.hard === false)
+				{
+					//console.log("move with zoom");
+				}
+				else
+				{
+					console.log('load');
+					this.load();
+				}
 			});
 			//TODO reload/rerender on move - but only if movedistance is >= trashhold
 			
@@ -54,7 +69,7 @@ module t {
 			//TODO check zoomlevel
 			resueData = resueData ? resueData : false;
 
-			if ((resueData && this._jsonData) || (this.__map.getZoom() < 18))
+			if ((resueData && this._jsonData) || (this.__map.getZoom() < 17))
 			{
 				this.render(this._jsonData);
 				let deferred = $.Deferred<any>();
@@ -287,11 +302,12 @@ module t {
 
 		loadFromOverpass(): JQueryXHR 
 		{ 
+			this.loadindicator(1);
 			let bounds = this.__map.getBounds()
-			let bboxxtring = bounds.getSouth() + ","
-				+ bounds.getWest() + ","
-				+ bounds.getNorth() + ","
-				+ bounds.getEast();
+			let bboxxtring = (bounds.getSouth()-0.0005) + ","
+				+ (bounds.getWest()-0.0005) + ","
+				+ (bounds.getNorth()+0.0005) + ","
+				+ (bounds.getEast()+0.0005);
 			let overpassQuery = `
 				[out:json][timeout:25]; 
 				( 
@@ -315,13 +331,15 @@ module t {
 				out skel qt;`;
 			overpassQuery = overpassQuery.replace(/{{bbox}}/g, bboxxtring);
 
-			console.log(overpassQuery);
-
 			//let url = "http://overpass.osm.rambler.ru/cgi/interpreter?data=%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9Cindoor%3D*%E2%80%9D%0A*%2F%0A%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%0A%2F%2F%20gather%20results%0A%28%0A%20%20%2F%2F%20query%20part%20for%3A%20%E2%80%9Cindoor%3D*%E2%80%9D%0A%20%20node%5B%22indoor%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22indoor%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20relation%5B%22indoor%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22railway%22%3D%22platform%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22highway%22%3D%22platform%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20relation%5B%22railway%22%3D%22platform%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20node%5B%22room%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22room%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20relation%5B%22room%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20node%5B%22highway%22%3D%22elevator%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20node%5B%22level%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22highway%22~%22footway%7Celevator%7Csteps%7Cpath%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%29%3B%0A%2F%2F%20print%20results%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B"
 			let apiUrl = "http://overpass.osm.rambler.ru/cgi/interpreter?data=";
 			let url = apiUrl + encodeURI(overpassQuery);
 			let request = $.getJSON(url, (result) => {
-				console.log(result);
+				//console.log(result);
+			});
+			request.always(() => {
+				
+				this.loadindicator(-1);
 			});
 
 			return request;
@@ -336,6 +354,42 @@ module t {
 		deactivateWheelchairStyle() {
 			this._isWheelchairstyleActive = false;
 			this.load(true);
+		}
+
+		toggleWheelChair()
+		{
+			let button = $("#wheelchairtoggle")
+			if (this._isWheelchairstyleActive)
+			{
+				this.deactivateWheelchairStyle();
+				button.removeClass('pressed');
+			}
+			else
+			{
+				this.activateWheelchairStyle();
+				button.addClass('pressed');
+			}
+		}
+
+		loadindicator(n: number) {
+			if (!this._activeLoads) {
+				this._activeLoads = 0;
+			}
+			this._activeLoads = this._activeLoads + n;
+
+			//should never happen ;)
+			if (this._activeLoads < 0)
+			{
+				this._activeLoads = 0;
+			}
+
+			if (this._activeLoads == 0) {
+				$("#loading").hide();
+			}
+			if (this._activeLoads > 0)
+			{
+				$("#loading").show();
+			}
 		}
 
 
@@ -377,5 +431,7 @@ module t {
 		 * cached OSM JSON
 		 */
 		private _jsonData: any;
+
+		private _activeLoads: number;
 	}
 }
