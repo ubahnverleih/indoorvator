@@ -2,13 +2,15 @@ var t;
 (function (t) {
     var mapForm = (function () {
         function mapForm() {
+            var _this = this;
             this.initMap();
+            $('#simulatebutton').on('click', function () { return _this.simulateBrokenLift(); });
         }
         mapForm.prototype.initMap = function () {
             var _this = this;
             this._level = 0;
             this.__map = new L.Map('map', {});
-            this.__map.setView([51.04022, 13.73245], 18);
+            this.__map.setView([51.04022, 13.73245], 19);
             L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.streets-basic/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidWJhaG52ZXJsZWloIiwiYSI6IjZyVGcyZzAifQ.EP3L8P8zlHIRF7-pB7zfDA', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
                 maxZoom: 22
@@ -97,14 +99,14 @@ var t;
                 if (_this._level === level) {
                     additionalClass = " levelbutton-active";
                 }
-                var button = $('<div class="levelbutton ' + additionalClass + '">' + level + '</div>');
+                var button = $('<div class="levelbutton' + additionalClass + '">' + level + '</div>');
                 levelContainer.append(button);
                 button.on('click', function () { return _this.switchLevel(level); });
             });
         };
         mapForm.prototype.switchLevel = function (level) {
             this._level = level;
-            this.load();
+            return this.load();
         };
         mapForm.prototype.addToLevelList = function (levels) {
             var _this = this;
@@ -115,6 +117,34 @@ var t;
             });
             this._levelList.sort();
             this._levelList = this._levelList.reverse();
+        };
+        mapForm.prototype.simulateBrokenLift = function () {
+            var _this = this;
+            this.switchLevel(1).then(function () {
+                _this.__map.setView([51.04034, 13.73327], 19);
+                setTimeout(function () {
+                    $.getJSON("./data/unavailable_plattform.geojson", function (geojson) {
+                        var layer = L.geoJson(geojson, {
+                            style: function () {
+                                return {
+                                    "fill": true,
+                                    "fillColor": "#FF0000",
+                                    "fillOpacity": 0.6,
+                                    "stroke": false
+                                };
+                            }
+                        });
+                        layer.addTo(_this.__map);
+                    });
+                    var marker = new L.Marker([51.0403711, 13.733309], {
+                        icon: new L.Icon({
+                            iconUrl: "./img/mapicons/elevator_red_filled.png",
+                            iconAnchor: new L.Point(12, 14)
+                        })
+                    });
+                    marker.addTo(_this.__map);
+                }, 1500);
+            });
         };
         return mapForm;
     })();
@@ -175,7 +205,7 @@ var t;
                     html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
                         + label,
                     className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
-                    iconAnchor: [50, 50]
+                    iconAnchor: [50, 25]
                 });
                 return icon;
             }

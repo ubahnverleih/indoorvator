@@ -71,7 +71,7 @@ module t {
 					html: (featureStyle.iconUrl ? '<img class="label-icon" src="' + featureStyle.iconUrl + '" />' : "")
 					+ label,
 					className: "label-class " + (featureStyle.markerClassName ? featureStyle.markerClassName : ""),
-					iconAnchor: <any>[50, 50]
+					iconAnchor: <any>[50, 25]
 				});
 				//console.log(icon);
 				return icon;

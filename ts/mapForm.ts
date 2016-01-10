@@ -7,13 +7,15 @@ module t {
 		constructor()
 		{
 			this.initMap();
+
+			$('#simulatebutton').on('click', () => this.simulateBrokenLift());
 		}
 
 		initMap(): void
 		{
 			this._level = 0;
 			this.__map = new L.Map('map', {});
-			this.__map.setView([51.04022, 13.73245], 18);
+			this.__map.setView([51.04022, 13.73245], 19);
 			/*L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
 				maxZoom: 22
@@ -148,10 +150,10 @@ module t {
 			});
 		}
 
-		switchLevel(level: number)
+		switchLevel(level: number): JQueryXHR
 		{
 			this._level = level;
-			this.load();
+			return this.load();
 		}
 
 		addToLevelList(levels: number[])
@@ -163,6 +165,45 @@ module t {
 			});
 			this._levelList.sort()
 			this._levelList = this._levelList.reverse();
+		}
+
+		/**
+		 * Simulates a broken lift to a blattform in Dresden Hbf
+		 */
+		simulateBrokenLift():void
+		{
+			this.switchLevel(1).then(() => {
+				this.__map.setView([51.04034, 13.73327], 19);
+
+				//timeOut besause else new layer will be cleared
+				setTimeout(() => {
+					$.getJSON("./data/unavailable_plattform.geojson", (geojson) => {
+						let layer = L.geoJson(geojson, {
+							style: () => {
+								return {
+									"fill": true,
+									"fillColor": "#FF0000",
+									"fillOpacity": 0.6,
+									"stroke": false
+								}
+							}
+						});
+
+						layer.addTo(this.__map);
+					});
+
+					let marker = new L.Marker([51.0403711, 13.733309], {
+						icon: new L.Icon({
+							iconUrl: "./img/mapicons/elevator_red_filled.png",
+							iconAnchor: new L.Point(12, 14)
+						})
+					})
+					marker.addTo(this.__map);
+
+				}, 1500);
+			});
+
+
 		}
 
 
