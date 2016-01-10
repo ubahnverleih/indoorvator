@@ -1,4 +1,4 @@
-# indoorstations
+# indoorvator ⏬🚻⏫
 
 Eine Karte die das Innenleben von Bahnhöfen darstellt, wenn diese Dinge in OpenStreetMap eingetragen sind.
 So kann man zwischen den einzelnen Etagen umschalten, wenn das `level`-Tag in OSM verwendet wurde.
