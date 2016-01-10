@@ -17,6 +17,7 @@ module t {
 			this._level = 0;
 			this.__map = new L.Map('map', {});
 			this.__map.setView([51.04022, 13.73245], 19);
+			this._isWheelchairstyleActive = true;
 			/*L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
 				maxZoom: 22
@@ -27,11 +28,24 @@ module t {
 				maxZoom: 22
 			}).addTo(this.__map);
 
-			this.loadStyle().then(() => this.load()).then(() => this.loadDbElevators()); //First load Style, then load the mapdata
+			this._lastZoomLevel = this.__map.getZoom();
 
+			this.loadStyle()
+				.then(() => this.loadWheelchairStyle())
+				.then(() => this.load())
+				.then(() => this.loadDbElevators()); //First load Style, then load the mapdata
+
+			//reload/rerender on zoom
 			this.__map.on('zoomend', () => {
-				this.load();
+				if (this._lastZoomLevel && this.__map.getZoom() > this._lastZoomLevel) {
+					this.load(true);
+				}
+				else {
+					this.load();
+				}
+				this._lastZoomLevel = this.__map.getZoom()
 			});
+			//TODO reload/rerender on move - but only if movedistance is >= trashhold
 			
 		}
 
@@ -93,6 +107,12 @@ module t {
 				this._style = json;
 			});
 		}
+
+		loadWheelchairStyle(): JQueryXHR {
+			return $.getJSON('./mapstyle/wheelchairstyle.json', (json) => {
+				this._wheelchairStyle = json;
+			});
+		}
 		/**
 		 * Filtert alle Features raus, die nicht zum aktuellen Level gehören.
 		 */
@@ -121,9 +141,10 @@ module t {
 
 		_styleGeoJson(feature: any): any
 		{
-			let s = styleParser.getSimpleStyleForFeature(feature, this._style);
+			let style = this._isWheelchairstyleActive ? this._wheelchairStyle : this._style;
+			let s = styleParser.getSimpleStyleForFeature(feature, style);
 			
-			let marker = styleParser.getLabelMarker(feature, this._style, this.__map.getZoom());
+			let marker = styleParser.getLabelMarker(feature, style, this.__map.getZoom());
 			if (marker) {
 				marker.addTo(this.__map);
 			}
@@ -306,6 +327,17 @@ module t {
 			return request;
 		}
 
+		activateWheelchairStyle()
+		{
+			this._isWheelchairstyleActive = true;
+			this.load(true);
+		}
+
+		deactivateWheelchairStyle() {
+			this._isWheelchairstyleActive = false;
+			this.load(true);
+		}
+
 
 		/**
 		 * Leaflet Mapobject
@@ -320,11 +352,26 @@ module t {
 		 */
 		private _style: any;
 		/**
+		 * Wheelchairstyle
+		 */
+		private _wheelchairStyle: any;
+
+		/**
 		 * List of all available Levels
 		 */
 		private _levelList: number[];
 
 		private _elevatorMarkers: L.Marker[];
+
+		/**
+		 * last Zoomlevel. Used to detect if zoomed in or out.
+		 */
+		private _lastZoomLevel: number;
+
+		/**
+		 * indicate that the wheelchairstyle is activated
+		 */
+		private _isWheelchairstyleActive: boolean;
 
 		/**
 		 * cached OSM JSON

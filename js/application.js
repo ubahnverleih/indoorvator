@@ -11,13 +11,24 @@ var t;
             this._level = 0;
             this.__map = new L.Map('map', {});
             this.__map.setView([51.04022, 13.73245], 19);
+            this._isWheelchairstyleActive = true;
             L.tileLayer('https://api.tiles.mapbox.com/v4/mapbox.streets-basic/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoidWJhaG52ZXJsZWloIiwiYSI6IjZyVGcyZzAifQ.EP3L8P8zlHIRF7-pB7zfDA', {
                 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
                 maxZoom: 22
             }).addTo(this.__map);
-            this.loadStyle().then(function () { return _this.load(); }).then(function () { return _this.loadDbElevators(); });
+            this._lastZoomLevel = this.__map.getZoom();
+            this.loadStyle()
+                .then(function () { return _this.loadWheelchairStyle(); })
+                .then(function () { return _this.load(); })
+                .then(function () { return _this.loadDbElevators(); });
             this.__map.on('zoomend', function () {
-                _this.load();
+                if (_this._lastZoomLevel && _this.__map.getZoom() > _this._lastZoomLevel) {
+                    _this.load(true);
+                }
+                else {
+                    _this.load();
+                }
+                _this._lastZoomLevel = _this.__map.getZoom();
             });
         };
         mapForm.prototype.load = function (resueData) {
@@ -66,6 +77,12 @@ var t;
                 _this._style = json;
             });
         };
+        mapForm.prototype.loadWheelchairStyle = function () {
+            var _this = this;
+            return $.getJSON('./mapstyle/wheelchairstyle.json', function (json) {
+                _this._wheelchairStyle = json;
+            });
+        };
         mapForm.prototype._layerFilter = function (feature) {
             var properties = feature.properties;
             if (properties.level) {
@@ -82,8 +99,9 @@ var t;
             return false;
         };
         mapForm.prototype._styleGeoJson = function (feature) {
-            var s = t.styleParser.getSimpleStyleForFeature(feature, this._style);
-            var marker = t.styleParser.getLabelMarker(feature, this._style, this.__map.getZoom());
+            var style = this._isWheelchairstyleActive ? this._wheelchairStyle : this._style;
+            var s = t.styleParser.getSimpleStyleForFeature(feature, style);
+            var marker = t.styleParser.getLabelMarker(feature, style, this.__map.getZoom());
             if (marker) {
                 marker.addTo(this.__map);
             }
@@ -206,6 +224,14 @@ var t;
                 console.log(result);
             });
             return request;
+        };
+        mapForm.prototype.activateWheelchairStyle = function () {
+            this._isWheelchairstyleActive = true;
+            this.load(true);
+        };
+        mapForm.prototype.deactivateWheelchairStyle = function () {
+            this._isWheelchairstyleActive = false;
+            this.load(true);
         };
         return mapForm;
     })();

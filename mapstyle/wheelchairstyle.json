@@ -1,0 +1,195 @@
+[
+	{
+		"key": "indoor",
+		"style": {
+			"stroke": true,
+			"color": "#000",
+			"fill": true,
+			"fillColor": "#FFF",
+			"weight": 2,
+			"opacity": 1,
+			"fillOpacity": 1
+		},
+		"valueStyles": [{
+			"value": "corridor",
+			"style": {
+				"stroke": false,
+				"fillColor": "#FFF",
+				"fillOpacity": 1
+			}
+		}]
+	},
+	{
+		"key": "room",
+		"style": {
+			"stroke": true,
+			"color": "#000",
+			"fill": true,
+			"fillColor": "#FFFAD1",
+			"fillOpacity": 1,
+			"weight": 2,
+			"opacity": 1,
+			"showText": true,
+			"markerClassName": "label-room"
+		},
+		"valueStyles": []
+	},
+	{
+		"key": "shop",
+		"style": {
+			"showText": true,
+			"className": "roomLabel",
+			"labelMinZoom": 20,
+			"iconMinZoom": 19,
+			"iconUrl": "./img/mapicons/shop.png",
+			"markerClassName": "label-shop"
+		},
+		"valueStyles": [{
+			"value": "bakery",
+			"style": {
+				"iconUrl": "./img/mapicons/bakery.png",
+				"markerClassName": "label-bakery"
+			}
+		},
+		{
+			"value": "supermarket",
+			"style": {
+				"iconUrl": "./img/mapicons/supermarket.png",
+				"labelMinZoom": 19,
+				"iconMinZoom": 18
+			}
+		}]
+	},
+	{
+		"key": "amenity",
+		"style": {
+			"showText": true,
+			"className": "roomLabel",
+			"labelMinZoom": 20,
+			"iconMinZoom": 19
+		},
+		"valueStyles": [{
+			"value": "cafe",
+			"style": {
+				"iconUrl": "./img/mapicons/coffee.png",
+				"markerClassName": "label-bakery",
+				"labelMinZoom": 19,
+				"iconMinZoom": 18
+			}
+		},
+		{
+			"value": "restaurant",
+			"style": {
+				"iconUrl": "./img/mapicons/restaurant.png",
+				"markerClassName": "label-bakery",
+				"labelMinZoom": 19,
+				"iconMinZoom": 18
+			}
+		},
+		{
+			"value": "fast_food",
+			"style": {
+				"iconUrl": "./img/mapicons/fastfood.png",
+				"markerClassName": "label-bakery",
+				"iconMinZoom": 18
+			}
+		}]
+	},
+	{
+		"key": "railway",
+		"style": {
+
+		},
+		"valueStyles": [{
+			"value": "platform",
+			"style": {
+				"stroke": true,
+				"color": "#575757",
+				"fill": true,
+				"fillColor": "#B3B3B3",
+				"weight": 2,
+				"opacity": 1,
+				"fillOpacity": 1
+			}
+		}]
+	},
+	{
+		"key": "highway",
+		"style": {
+
+		},
+		"valueStyles": [{
+			"value": "footway",
+			"style": {
+				"stroke": true,
+				"color": "#B3B3B3",
+				"fill": false,
+				"weight": 6,
+				"opacity": 1,
+				"dashArray": [12,3],
+				"lineCap": "sqare"
+			}
+		},
+		{
+			"value": "steps",
+			"style": {
+				"stroke": true,
+				"color": "#B10016",
+				"fill": false,
+				"weight": 8,
+				"opacity": 1,
+				"dashArray": [3,3],
+				"lineCap": "sqare"
+			}
+		},
+		{
+			"value": "elevator",
+			"style": {
+				"stroke": true,
+				"color": "#B3B3B3",
+				"fillColor": "#B3B3B3",
+				"fill": true,
+				"weight": 0,
+				"opacity": 1,
+				"fillOpacity": 1,
+				"lineCap": "sqare",
+				"showText": true,
+				"iconUrl": "./img/mapicons/elevator_green_filled.png",
+				"markerClassName": "label-elevator"
+			}
+		}]
+	},
+	{
+		"key": "wheelchair",
+		"style": {
+
+		},
+		"valueStyles": [{
+			"value": "yes",
+			"style": {
+				"stroke": true,
+				"color": "#417605",
+				"fillColor": "#417605",
+				"fillOpacity": "0.5"
+			}
+		},
+		{
+			"value": "no",
+			"style": {
+				"stroke": true,
+				"color": "#B10016",
+				"fillColor": "#B10016",
+				"fillOpacity": "0.5"
+			}
+		},
+		{
+			"value": "limited",
+			"style": {
+				"stroke": true,
+				"color": "#FF9D00",
+				"fillColor": "#FF9D00",
+				"fillOpacity": "0.5"
+			}
+		}]
+	}
+]
