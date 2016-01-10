@@ -35,33 +35,56 @@ module t {
 			
 		}
 
-		load(): JQueryXHR
+		load(resueData?: boolean): JQueryXHR
 		{
-			this._levelList = [];
-			let xhr = $.getJSON('./data/dresden_hbf.json', (json) => {
-				let geojson = osmtogeojson(json, {
-					flatProperties: true,
-					polygonFeatures: () => true //all closed lines are polygons
-				});
+			//TODO check zoomlevel
+			resueData = resueData ? resueData : false;
 
-				this.__map.eachLayer((layer: any) => {
-					if (!(layer instanceof L.TileLayer)) {
-						this.__map.removeLayer(layer);
-					}
+			if ((resueData && this._jsonData) || (this.__map.getZoom() < 18))
+			{
+				this.render(this._jsonData);
+				let deferred = $.Deferred<any>();
+				deferred.resolve(this._jsonData);
+				return <JQueryXHR>deferred.promise();
+			}
+			else
+			{
+				this._levelList = [];
+				//this.loadFromOverpass() //TODO
+				//let xhr = $.getJSON('./data/dresden_hbf.json', (json) => {
+				
+				let xhr = this.loadFromOverpass();
+				xhr.done((json) => {
+					this._jsonData = json;
+					this.render(json);
 				});
+				return xhr;
+			}
+		}
 
-				L.geoJson(geojson, {
-					//smoothFactor: 0, //don't Simplify Lines
-					filter: (feature) => this._layerFilter(feature), //`() =>` to keep scope
-					style: (feature) => this._styleGeoJson(feature), //`() =>` to keep scope
-					pointToLayer: (feature: any, latlng: L.LatLng) => {
-						return this.createsStyledMarker(feature, latlng);
-					}
-				}).addTo(this.__map);
-				this.initLevelButtons();
-				this.showElevators();
+		render(json: any)
+		{
+			let geojson = osmtogeojson(json, {
+				flatProperties: true,
+				polygonFeatures: () => true //all closed lines are polygons
 			});
-			return xhr;
+
+			this.__map.eachLayer((layer: any) => {
+				if (!(layer instanceof L.TileLayer)) {
+					this.__map.removeLayer(layer);
+				}
+			});
+
+			L.geoJson(geojson, {
+				//smoothFactor: 0, //don't Simplify Lines
+				filter: (feature) => this._layerFilter(feature), //`() =>` to keep scope
+				style: (feature) => this._styleGeoJson(feature), //`() =>` to keep scope
+				pointToLayer: (feature: any, latlng: L.LatLng) => {
+					return this.createsStyledMarker(feature, latlng);
+				}
+			}).addTo(this.__map);
+			this.initLevelButtons();
+			this.showElevators();
 		}
 
 		loadStyle(): JQueryXHR
@@ -155,17 +178,20 @@ module t {
 		switchLevel(level: number): JQueryXHR
 		{
 			this._level = level;
-			return this.load();
+			return this.load(true);
 		}
 
 		addToLevelList(levels: number[])
 		{
 			levels.forEach((level) => {
-				if ($.inArray(level, this._levelList) == -1) {
-					this._levelList.push(level);
+				if (!isNaN(level))
+				{
+					if ($.inArray(level, this._levelList) == -1) {
+						this._levelList.push(level);
+					}
 				}
 			});
-			this._levelList.sort()
+			this._levelList.sort(); //TODO fixing sort
 			this._levelList = this._levelList.reverse();
 		}
 
@@ -209,12 +235,10 @@ module t {
 		loadDbElevators()
 		{
 			this._elevatorMarkers = [];
-			console.log('load');
 			$.getJSON("http://adam.noncd.db.de/api/v1.0/facilities", (json) => {
 				if (json)
 				{
 					json.forEach((elevator: any) => {
-						console.log(elevator);
 						let icon = new L.Icon({
 							iconUrl: "./img/mapicons/" + ((elevator.state == "INACTIVE") ? "elevator_red_filled.png" : "elevator_green_filled.png"),
 							iconAnchor: new L.Point(12, 14)
@@ -240,6 +264,48 @@ module t {
 			}
 		}
 
+		loadFromOverpass(): JQueryXHR 
+		{ 
+			let bounds = this.__map.getBounds()
+			let bboxxtring = bounds.getSouth() + ","
+				+ bounds.getWest() + ","
+				+ bounds.getNorth() + ","
+				+ bounds.getEast();
+			let overpassQuery = `
+				[out:json][timeout:25]; 
+				( 
+				// query part for: “indoor=*” 
+				node["indoor"]({{bbox}}); 
+				way["indoor"]({{bbox}}); 
+				relation["indoor"]({{bbox}}); 
+				way["railway" = "platform"]({{bbox}}); 
+				way["highway" = "platform"]({{bbox}}); 
+				relation["railway" = "platform"]({{bbox}}); 
+				node["room"]({{bbox}}); 
+				way["room"]({{bbox}}); 
+				relation["room"]({{bbox}}); 
+				node["highway" = "elevator"]({{bbox}}); 
+				node["level"]({{bbox}}); 
+				way["highway"~"footway|elevator|steps|path"]({{bbox}}); 
+				); 
+				// print results 
+				out body; 
+				>; 
+				out skel qt;`;
+			overpassQuery = overpassQuery.replace(/{{bbox}}/g, bboxxtring);
+
+			console.log(overpassQuery);
+
+			//let url = "http://overpass.osm.rambler.ru/cgi/interpreter?data=%2F*%0AThis%20has%20been%20generated%20by%20the%20overpass-turbo%20wizard.%0AThe%20original%20search%20was%3A%0A%E2%80%9Cindoor%3D*%E2%80%9D%0A*%2F%0A%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3B%0A%2F%2F%20gather%20results%0A%28%0A%20%20%2F%2F%20query%20part%20for%3A%20%E2%80%9Cindoor%3D*%E2%80%9D%0A%20%20node%5B%22indoor%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22indoor%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20relation%5B%22indoor%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22railway%22%3D%22platform%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22highway%22%3D%22platform%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20relation%5B%22railway%22%3D%22platform%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20node%5B%22room%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22room%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20relation%5B%22room%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20node%5B%22highway%22%3D%22elevator%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20node%5B%22level%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%20%20way%5B%22highway%22~%22footway%7Celevator%7Csteps%7Cpath%22%5D%2851.0399426744667%2C13.732688874006271%2C51.040494161677266%2C13.733840882778168%29%3B%0A%29%3B%0A%2F%2F%20print%20results%0Aout%20body%3B%0A%3E%3B%0Aout%20skel%20qt%3B"
+			let apiUrl = "http://overpass.osm.rambler.ru/cgi/interpreter?data=";
+			let url = apiUrl + encodeURI(overpassQuery);
+			let request = $.getJSON(url, (result) => {
+				console.log(result);
+			});
+
+			return request;
+		}
+
 
 		/**
 		 * Leaflet Mapobject
@@ -259,5 +325,10 @@ module t {
 		private _levelList: number[];
 
 		private _elevatorMarkers: L.Marker[];
+
+		/**
+		 * cached OSM JSON
+		 */
+		private _jsonData: any;
 	}
 }

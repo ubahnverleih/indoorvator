@@ -20,30 +20,45 @@ var t;
                 _this.load();
             });
         };
-        mapForm.prototype.load = function () {
+        mapForm.prototype.load = function (resueData) {
             var _this = this;
-            this._levelList = [];
-            var xhr = $.getJSON('./data/dresden_hbf.json', function (json) {
-                var geojson = osmtogeojson(json, {
-                    flatProperties: true,
-                    polygonFeatures: function () { return true; }
+            resueData = resueData ? resueData : false;
+            if ((resueData && this._jsonData) || (this.__map.getZoom() < 18)) {
+                this.render(this._jsonData);
+                var deferred = $.Deferred();
+                deferred.resolve(this._jsonData);
+                return deferred.promise();
+            }
+            else {
+                this._levelList = [];
+                var xhr = this.loadFromOverpass();
+                xhr.done(function (json) {
+                    _this._jsonData = json;
+                    _this.render(json);
                 });
-                _this.__map.eachLayer(function (layer) {
-                    if (!(layer instanceof L.TileLayer)) {
-                        _this.__map.removeLayer(layer);
-                    }
-                });
-                L.geoJson(geojson, {
-                    filter: function (feature) { return _this._layerFilter(feature); },
-                    style: function (feature) { return _this._styleGeoJson(feature); },
-                    pointToLayer: function (feature, latlng) {
-                        return _this.createsStyledMarker(feature, latlng);
-                    }
-                }).addTo(_this.__map);
-                _this.initLevelButtons();
-                _this.showElevators();
+                return xhr;
+            }
+        };
+        mapForm.prototype.render = function (json) {
+            var _this = this;
+            var geojson = osmtogeojson(json, {
+                flatProperties: true,
+                polygonFeatures: function () { return true; }
             });
-            return xhr;
+            this.__map.eachLayer(function (layer) {
+                if (!(layer instanceof L.TileLayer)) {
+                    _this.__map.removeLayer(layer);
+                }
+            });
+            L.geoJson(geojson, {
+                filter: function (feature) { return _this._layerFilter(feature); },
+                style: function (feature) { return _this._styleGeoJson(feature); },
+                pointToLayer: function (feature, latlng) {
+                    return _this.createsStyledMarker(feature, latlng);
+                }
+            }).addTo(this.__map);
+            this.initLevelButtons();
+            this.showElevators();
         };
         mapForm.prototype.loadStyle = function () {
             var _this = this;
@@ -107,13 +122,15 @@ var t;
         };
         mapForm.prototype.switchLevel = function (level) {
             this._level = level;
-            return this.load();
+            return this.load(true);
         };
         mapForm.prototype.addToLevelList = function (levels) {
             var _this = this;
             levels.forEach(function (level) {
-                if ($.inArray(level, _this._levelList) == -1) {
-                    _this._levelList.push(level);
+                if (!isNaN(level)) {
+                    if ($.inArray(level, _this._levelList) == -1) {
+                        _this._levelList.push(level);
+                    }
                 }
             });
             this._levelList.sort();
@@ -150,11 +167,9 @@ var t;
         mapForm.prototype.loadDbElevators = function () {
             var _this = this;
             this._elevatorMarkers = [];
-            console.log('load');
             $.getJSON("http://adam.noncd.db.de/api/v1.0/facilities", function (json) {
                 if (json) {
                     json.forEach(function (elevator) {
-                        console.log(elevator);
                         var icon = new L.Icon({
                             iconUrl: "./img/mapicons/" + ((elevator.state == "INACTIVE") ? "elevator_red_filled.png" : "elevator_green_filled.png"),
                             iconAnchor: new L.Point(12, 14)
@@ -175,6 +190,22 @@ var t;
                     marker.addTo(_this.__map);
                 });
             }
+        };
+        mapForm.prototype.loadFromOverpass = function () {
+            var bounds = this.__map.getBounds();
+            var bboxxtring = bounds.getSouth() + ","
+                + bounds.getWest() + ","
+                + bounds.getNorth() + ","
+                + bounds.getEast();
+            var overpassQuery = "\n\t\t\t\t[out:json][timeout:25]; \n\t\t\t\t( \n\t\t\t\t// query part for: \u201Cindoor=*\u201D \n\t\t\t\tnode[\"indoor\"]({{bbox}}); \n\t\t\t\tway[\"indoor\"]({{bbox}}); \n\t\t\t\trelation[\"indoor\"]({{bbox}}); \n\t\t\t\tway[\"railway\" = \"platform\"]({{bbox}}); \n\t\t\t\tway[\"highway\" = \"platform\"]({{bbox}}); \n\t\t\t\trelation[\"railway\" = \"platform\"]({{bbox}}); \n\t\t\t\tnode[\"room\"]({{bbox}}); \n\t\t\t\tway[\"room\"]({{bbox}}); \n\t\t\t\trelation[\"room\"]({{bbox}}); \n\t\t\t\tnode[\"highway\" = \"elevator\"]({{bbox}}); \n\t\t\t\tnode[\"level\"]({{bbox}}); \n\t\t\t\tway[\"highway\"~\"footway|elevator|steps|path\"]({{bbox}}); \n\t\t\t\t); \n\t\t\t\t// print results \n\t\t\t\tout body; \n\t\t\t\t>; \n\t\t\t\tout skel qt;";
+            overpassQuery = overpassQuery.replace(/{{bbox}}/g, bboxxtring);
+            console.log(overpassQuery);
+            var apiUrl = "http://overpass.osm.rambler.ru/cgi/interpreter?data=";
+            var url = apiUrl + encodeURI(overpassQuery);
+            var request = $.getJSON(url, function (result) {
+                console.log(result);
+            });
+            return request;
         };
         return mapForm;
     })();
