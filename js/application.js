@@ -161,7 +161,7 @@ var t;
                     }
                 }
             });
-            this._levelList.sort();
+            this._levelList.sort(function (a, b) { return a - b; });
             this._levelList = this._levelList.reverse();
         };
         mapForm.prototype.simulateBrokenLift = function () {

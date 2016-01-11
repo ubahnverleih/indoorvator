@@ -227,7 +227,7 @@ module t {
 					}
 				}
 			});
-			this._levelList.sort(); //TODO fixing sort
+			this._levelList.sort((a, b) => { return a - b });
 			this._levelList = this._levelList.reverse();
 		}
 
