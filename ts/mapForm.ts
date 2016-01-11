@@ -316,6 +316,8 @@ module t {
 				way["indoor"]({{bbox}}); 
 				relation["indoor"]({{bbox}}); 
 				way["railway" = "platform"]({{bbox}}); 
+				way["public_transport" = "platform"]({{bbox}}); 
+				relation["public_transport" = "platform"]({{bbox}}); 
 				way["highway" = "platform"]({{bbox}}); 
 				relation["railway" = "platform"]({{bbox}}); 
 				node["room"]({{bbox}}); 
