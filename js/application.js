@@ -202,10 +202,12 @@ var t;
                             iconUrl: "./img/mapicons/" + ((elevator.state == "INACTIVE") ? "elevator_red_filled.png" : "elevator_green_filled.png"),
                             iconAnchor: new L.Point(12, 14)
                         });
-                        var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX], {
-                            icon: icon
-                        });
-                        _this._elevatorMarkers.push(marker);
+                        if (elevator.geocoordY && elevator.geocoordX) {
+                            var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX], {
+                                icon: icon
+                            });
+                            _this._elevatorMarkers.push(marker);
+                        }
                     });
                 }
             });
@@ -227,7 +229,7 @@ var t;
                 + (bounds.getWest() - 0.0005) + ","
                 + (bounds.getNorth() + 0.0005) + ","
                 + (bounds.getEast() + 0.0005);
-            var overpassQuery = "\n\t\t\t\t[out:json][timeout:25]; \n\t\t\t\t( \n\t\t\t\t// query part for: \u201Cindoor=*\u201D \n\t\t\t\tnode[\"indoor\"]({{bbox}}); \n\t\t\t\tway[\"indoor\"]({{bbox}}); \n\t\t\t\trelation[\"indoor\"]({{bbox}}); \n\t\t\t\tway[\"railway\" = \"platform\"]({{bbox}}); \n\t\t\t\tway[\"public_transport\" = \"platform\"]({{bbox}}); \n\t\t\t\trelation[\"public_transport\" = \"platform\"]({{bbox}}); \n\t\t\t\tway[\"highway\" = \"platform\"]({{bbox}}); \n\t\t\t\trelation[\"railway\" = \"platform\"]({{bbox}}); \n\t\t\t\tnode[\"room\"]({{bbox}}); \n\t\t\t\tway[\"room\"]({{bbox}}); \n\t\t\t\trelation[\"room\"]({{bbox}}); \n\t\t\t\tnode[\"highway\" = \"elevator\"]({{bbox}}); \n\t\t\t\tnode[\"level\"]({{bbox}}); \n\t\t\t\tway[\"highway\"~\"footway|elevator|steps|path\"]({{bbox}}); \n\t\t\t\t); \n\t\t\t\t// print results \n\t\t\t\tout body; \n\t\t\t\t>; \n\t\t\t\tout skel qt;";
+            var overpassQuery = "\n\t\t\t\t[out:json][timeout:25];\n\t\t\t\t(\n\t\t\t\t// query part for: \u201Cindoor=*\u201D\n\t\t\t\tnode[\"indoor\"]({{bbox}});\n\t\t\t\tway[\"indoor\"]({{bbox}});\n\t\t\t\trelation[\"indoor\"]({{bbox}});\n\t\t\t\tway[\"railway\" = \"platform\"]({{bbox}});\n\t\t\t\tway[\"public_transport\" = \"platform\"]({{bbox}});\n\t\t\t\trelation[\"public_transport\" = \"platform\"]({{bbox}});\n\t\t\t\tway[\"highway\" = \"platform\"]({{bbox}});\n\t\t\t\trelation[\"railway\" = \"platform\"]({{bbox}});\n\t\t\t\tnode[\"room\"]({{bbox}});\n\t\t\t\tway[\"room\"]({{bbox}});\n\t\t\t\trelation[\"room\"]({{bbox}});\n\t\t\t\tnode[\"highway\" = \"elevator\"]({{bbox}});\n\t\t\t\tnode[\"level\"]({{bbox}});\n\t\t\t\tway[\"highway\"~\"footway|elevator|steps|path\"]({{bbox}});\n\t\t\t\t);\n\t\t\t\t// print results\n\t\t\t\tout body;\n\t\t\t\t>;\n\t\t\t\tout skel qt;";
             overpassQuery = overpassQuery.replace(/{{bbox}}/g, bboxxtring);
             var apiUrl = "http://overpass.osm.rambler.ru/cgi/interpreter?data=";
             var url = apiUrl + encodeURI(overpassQuery);

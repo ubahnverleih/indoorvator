@@ -10,7 +10,7 @@ module t {
 
 			$('#simulatebutton').on('click', () => this.simulateBrokenLift());
 			$("#wheelchairtoggle").on('click', () => this.toggleWheelChair());
-			
+
 		}
 
 		initMap(): void
@@ -48,7 +48,7 @@ module t {
 			});
 
 			this.__map.on('moveend', (e: any) => {
-				
+
 				console.log(e.hard);
 				if (e.hard === false)
 				{
@@ -61,7 +61,7 @@ module t {
 				}
 			});
 			//TODO reload/rerender on move - but only if movedistance is >= trashhold
-			
+
 		}
 
 		load(resueData?: boolean): JQueryXHR
@@ -81,7 +81,7 @@ module t {
 				this._levelList = [];
 				//this.loadFromOverpass() //TODO
 				//let xhr = $.getJSON('./data/dresden_hbf.json', (json) => {
-				
+
 				let xhr = this.loadFromOverpass();
 				xhr.done((json) => {
 					this._jsonData = json;
@@ -138,7 +138,7 @@ module t {
 			{
 				let level = properties.level;
 				let parsedLevels = this.parseLevel(level)
-				
+
 				//add parsedLevels to Levellist
 				this.addToLevelList(parsedLevels);
 
@@ -158,12 +158,12 @@ module t {
 		{
 			let style = this._isWheelchairstyleActive ? this._wheelchairStyle : this._style;
 			let s = styleParser.getSimpleStyleForFeature(feature, style);
-			
+
 			let marker = styleParser.getLabelMarker(feature, style, this.__map.getZoom());
 			if (marker) {
 				marker.addTo(this.__map);
 			}
-			/*if (s) 
+			/*if (s)
 				console.log(s);*/
 			return s;
 		}
@@ -205,7 +205,7 @@ module t {
 					additionalClass = " levelbutton-active";
 				}
 				let button = $('<div class="levelbutton'+additionalClass+'">'+level+'</div>');
-				
+
 				levelContainer.append(button);
 				button.on('click', () => this.switchLevel(level));
 			});
@@ -279,11 +279,13 @@ module t {
 							iconUrl: "./img/mapicons/" + ((elevator.state == "INACTIVE") ? "elevator_red_filled.png" : "elevator_green_filled.png"),
 							iconAnchor: new L.Point(12, 14)
 						})
-
-						var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX], {
-							icon: icon
-						});
-						this._elevatorMarkers.push(marker);
+						if (elevator.geocoordY && elevator.geocoordX)
+						{
+							var marker = new L.Marker([elevator.geocoordY, elevator.geocoordX], {
+								icon: icon
+							});
+							this._elevatorMarkers.push(marker);
+						}
 					});
 				}
 			});
@@ -300,8 +302,8 @@ module t {
 			}
 		}
 
-		loadFromOverpass(): JQueryXHR 
-		{ 
+		loadFromOverpass(): JQueryXHR
+		{
 			this.loadindicator(1);
 			let bounds = this.__map.getBounds()
 			let bboxxtring = (bounds.getSouth()-0.0005) + ","
@@ -309,27 +311,27 @@ module t {
 				+ (bounds.getNorth()+0.0005) + ","
 				+ (bounds.getEast()+0.0005);
 			let overpassQuery = `
-				[out:json][timeout:25]; 
-				( 
-				// query part for: “indoor=*” 
-				node["indoor"]({{bbox}}); 
-				way["indoor"]({{bbox}}); 
-				relation["indoor"]({{bbox}}); 
-				way["railway" = "platform"]({{bbox}}); 
-				way["public_transport" = "platform"]({{bbox}}); 
-				relation["public_transport" = "platform"]({{bbox}}); 
-				way["highway" = "platform"]({{bbox}}); 
-				relation["railway" = "platform"]({{bbox}}); 
-				node["room"]({{bbox}}); 
-				way["room"]({{bbox}}); 
-				relation["room"]({{bbox}}); 
-				node["highway" = "elevator"]({{bbox}}); 
-				node["level"]({{bbox}}); 
-				way["highway"~"footway|elevator|steps|path"]({{bbox}}); 
-				); 
-				// print results 
-				out body; 
-				>; 
+				[out:json][timeout:25];
+				(
+				// query part for: “indoor=*”
+				node["indoor"]({{bbox}});
+				way["indoor"]({{bbox}});
+				relation["indoor"]({{bbox}});
+				way["railway" = "platform"]({{bbox}});
+				way["public_transport" = "platform"]({{bbox}});
+				relation["public_transport" = "platform"]({{bbox}});
+				way["highway" = "platform"]({{bbox}});
+				relation["railway" = "platform"]({{bbox}});
+				node["room"]({{bbox}});
+				way["room"]({{bbox}});
+				relation["room"]({{bbox}});
+				node["highway" = "elevator"]({{bbox}});
+				node["level"]({{bbox}});
+				way["highway"~"footway|elevator|steps|path"]({{bbox}});
+				);
+				// print results
+				out body;
+				>;
 				out skel qt;`;
 			overpassQuery = overpassQuery.replace(/{{bbox}}/g, bboxxtring);
 
@@ -340,7 +342,7 @@ module t {
 				//console.log(result);
 			});
 			request.always(() => {
-				
+
 				this.loadindicator(-1);
 			});
 
@@ -397,7 +399,7 @@ module t {
 
 		/**
 		 * Leaflet Mapobject
-		 */ 
+		 */
 		private __map: L.Map;
 		/**
 		 * current map level
